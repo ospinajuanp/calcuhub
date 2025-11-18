@@ -22,7 +22,7 @@ export default function HomePage() {
             {tCommon.calculatorsTitle}
           </h2>
           <p className="section-header-subtitle">
-            Accede rápido a las herramientas más usadas.
+            {tCommon.calculatorsDescription}
           </p>
         </header>
 
@@ -60,7 +60,7 @@ export default function HomePage() {
             {tCommon.categoriesTitle}
           </h1>
           <p className="section-header-subtitle">
-            Explora calculadoras agrupadas por áreas de interés.
+            {tCommon.categoriesDescription}
           </p>
         </header>
 

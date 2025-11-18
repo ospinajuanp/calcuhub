@@ -35,35 +35,39 @@ export default function ImcCalculator() {
     <div>
       <h2>{imcTexts.bmiTitle}</h2>
 
-      <form onSubmit={handleCalculate}>
-        <div className='calculator-form-grid'>
-          <label>
-            {imcTexts.bmiWeightLabel}
-            <span> (kg)</span>
-          </label>
-          <input
-            type="number"
-            step="0.1"
-            min="0"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            placeholder="Ej: 70"
-          />
-        </div>
+      <form onSubmit={handleCalculate} className='calculator-form'>
+        <div className='calculator-inputs'>
+          <div className='calculator-input-group'>
+            <label className='calculator-label'>
+              {imcTexts.bmiWeightLabel}
+              <span> (kg)</span>
+            </label>
+            <input
+              type="number"
+              step="0.1"
+              min="0"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+              placeholder="70"
+              className='calculator-input'
+            />
+          </div>
 
-        <div>
-          <label>
-            {imcTexts.bmiHeightLabel}
-            <span> (cm)</span>
-          </label>
-          <input
-            type="number"
-            step="0.1"
-            min="0"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            placeholder="Ej: 175"
-          />
+          <div className='calculator-input-group'>
+            <label className='calculator-label'>
+              {imcTexts.bmiHeightLabel}
+              <span> (cm)</span>
+            </label>
+            <input
+              type="number"
+              step="0.1"
+              min="0"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+              placeholder="175"
+              className='calculator-input'
+            />
+          </div>
         </div>
 
         <div className='calculator-actions'>
@@ -75,7 +79,7 @@ export default function ImcCalculator() {
 
 
       {bmi !== null && (
-        <div>
+        <div className='calculator-result-card'>
           <h3>{imcTexts.bmiResultTitle}</h3>
           <p>
             {

@@ -4,7 +4,9 @@ export const enDictionary = {
     siteName: 'CalcuHub',
     tagline: 'Practical calculators for everyday decisions',
     categoriesTitle: 'Categories',
+    categoriesDescription: 'Explore our calculators by popular categories.',
     calculatorsTitle: 'Featured calculators',
+    calculatorsDescription: 'Quick access to our most used calculators.',
     madeIn: 'Made with ❤️ by ',
     theme:{
       light: 'Light',

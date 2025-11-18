@@ -33,7 +33,7 @@ export function CalculatorClient({ calculator }: CalculatorClientProps) {
 
       {/* Aquí irá tu formulario real */}
       <section className="section">
-        <div className='card card-calculator'>
+        <div className='card card-calculator '>
           {SpecificCalculator ? (
             <SpecificCalculator />
           ) : (
@@ -43,16 +43,18 @@ export function CalculatorClient({ calculator }: CalculatorClientProps) {
           )}
 
         </div>
-        <div className="card calculator-result-card">
+        
+        {/* <div className="card calculator-result-card">
           <h2>Información sobre esta calculadora</h2>
           <p>
             Aquí puedes añadir texto extendido explicando cómo se usa
             esta calculadora, qué fórmula aplica y cómo interpretar el
             resultado.
           </p>
-        </div>
+        </div> */}
 
       </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -4,7 +4,9 @@ export const esDictionary = {
     siteName: 'CalcuHub',
     tagline: 'Calculadoras prácticas para tu día a día',
     categoriesTitle: 'Categorías',
+    categoriesDescription: 'Explora nuestras calculadoras por categorías populares.',
     calculatorsTitle: 'Calculadoras destacadas',
+    calculatorsDescription: 'Accede rápidamente a nuestras calculadoras más utilizadas.',
     madeIn: 'Hecho con ❤️ por ',
     theme:{
       light: 'Claro',

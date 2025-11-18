@@ -14,7 +14,10 @@
 
 .card-calculator {
   height: auto;
+  box-shadow: none;
+  transform: none;
 }
+
 
 .card-title {
   align-items: start;
@@ -52,10 +55,15 @@
 }
 
 .calculator-result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-surface);
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border);
   padding: var(--space-4);
+  margin-block-start: var(--space-4);
 }
 
 .button{
@@ -143,4 +151,49 @@
 }
 .card:hover .icon,.card:hover {
   transform: scale(101%);
+}
+
+.card-calculator:hover {
+  box-shadow: var(--shadow-card);
+  transform: none;
+  scale: none;
+}
+
+.calculator-actions {
+  margin-top: var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+.calculator-actions button {
+  transition: background-color 0.3s ease;
+}
+.calculator-actions button:hover {
+  background-color: var(--color-primary-strong);
+  transition: background-color 0.3s ease;
+}
+
+.calculator-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  margin-block: var(--space-4);
+  padding-block: var(--space-4);
+}
+
+.calculator-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.calculator-label{
+  font-weight: 600;
+}
+.calculator-input {
+  padding: var(--space-2);
+  background-color: var(--color-text-body);
+  border: 1px solid var(--color-text-body);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
