@@ -1,0 +1,99 @@
+/* Reset moderno ligero + estilos base globales */
+
+/* 1. Box sizing universal */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Eliminar márgenes por defecto en headings y body */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 3. Tipografía base */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Hacer imágenes y videos responsivos */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Formularios heredan tipografía */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Remover bullets de listas (se añaden manualmente con utilidades) */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* 7. Links básicos */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 8. Mantener outline accesible para teclado */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 9. Headings usando tokens */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-heading);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-heading);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-heading);
+}
+
+/* 10. Small text */
+small {
+  font-size: var(--font-size-small);
+}

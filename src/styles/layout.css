@@ -1,0 +1,209 @@
+/* contenedores, ancho máximo, secciones (home, category, calculator) */
+/* Layout general de la app: estructura, no diseño fino */
+
+/* 1. Contenedor principal centrado */
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  max-width: var(--container-max-width-lg);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+  padding-block: var(--space-4);
+}
+
+/* En pantallas pequeñas, reducimos un poco padding */
+@media (max-width: 768px) {
+  .app-shell {
+    padding-inline: var(--space-3);
+    padding-block: var(--space-3);
+  }
+}
+
+/* 2. Estructura de página base (Header + contenido + Footer) */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  
+}
+
+/* Donde va el contenido principal de cada página */
+.page-main {
+  flex: 1;
+}
+
+/* 3. Secciones verticales con espaciado consistente */
+.section {
+  padding-block-start: var(--space-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section--tight {
+  padding-block: var(--space-5);
+}
+
+.section--wide {
+  padding-block: var(--space-section-lg);
+}
+
+/* 4. Cabeceras de sección reutilizables */
+.section-header {
+  margin-bottom: var(--space-4);
+  text-align: center;
+  max-width: var(--container-max-width-md);
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+}
+
+.section-header-title {
+  margin-bottom: var(--space-2);
+}
+
+.section-header-subtitle {
+  color: var(--color-text-muted);
+}
+
+/* 5. Layout de Home (landing) */
+
+/* Grid para las cards de categorías en Home */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  max-width: fit-content;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 6. Layout de página de categoría */
+
+
+
+.category-grid {
+  
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+}
+
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 7. Layout de página de calculadora */
+
+.calculator-page {
+  max-width: var(--container-max-width-md);
+  margin-inline: auto;
+}
+
+/* Encabezado de la calculadora */
+.calculator-header {
+  margin-bottom: var(--space-5);
+}
+
+/* Contenedor principal de la calculadora (card) */
+
+
+/* Grid de inputs: 2 columnas en desktop, 1 en mobile */
+.calculator-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .calculator-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Botón centrado debajo del formulario */
+.calculator-actions {
+  margin-top: var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+/* Sección de resultado / tips */
+
+
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  height: 128px;
+  gap: var(--space-2);
+  
+}
+
+.card-calculator {
+  height: auto;  
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+.card-description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+.card-link {
+  color: var(--color-primary);
+}
+
+
+.button{
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header {
+  padding-block: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-6);
+}
+
+.footer {
+  padding-block: var(--space-5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}

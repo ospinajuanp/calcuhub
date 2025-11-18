@@ -1,0 +1,178 @@
+/* variables de color, sombras, etc. POR TEMA *//* Temas de la aplicación: cada tema solo cambia valores de las MISMAS variables */
+
+/* Tema por defecto: Light (profesional) */
+:root,
+[data-theme="light"] {
+  /* Fondo y estructura */
+  --color-bg: #F7F9FC;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E8EF;
+  --color-separator: #DCE1EB;
+
+  /* Primario */
+  --color-primary: #337BFF;
+  --color-primary-soft: #6DA0FF;
+  --color-primary-strong: #1F5EEA;
+
+  /* Tipografía */
+  --color-text-heading: #0B1220;
+  --color-text-body: #4A5568;
+  --color-text-muted: #7B8799;
+
+  /* Estados */
+  --color-success: #2ECC71;
+  --color-warning: #F4C542;
+  --color-error: #E74C3C;
+
+  /* Inputs / cards / sombras */
+  --color-input-bg: #FFFFFF;
+  --color-input-border: #E5E8EF;
+  --color-card-bg: #FFFFFF;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 24px rgb(109, 160, 255, 1);
+
+  /* Radios (podemos ajustar por tema si queremos) */
+  --radius-card: 16px;
+  --radius-input: 12px;
+  --radius-button: 10px;
+}
+
+/* Tema Dark profesional */
+[data-theme="dark"] {
+  /* Fondo y estructura */
+  --color-bg: #0B1124;
+  --color-surface: #141A2C;
+  --color-border: #1F2740;
+  --color-separator: #232C45;
+
+  /* Primario */
+  --color-primary: #4D8DFF;
+  --color-primary-soft: #77A9FF;
+  --color-primary-strong: #2C64EB;
+
+  /* Tipografía */
+  --color-text-heading: #FFFFFF;
+  --color-text-body: #D6DAE8;
+  --color-text-muted: #A6AEC3;
+
+  /* Estados */
+  --color-success: #20E17A;
+  --color-warning: #FFDD57;
+  --color-error: #FF6363;
+
+  /* Inputs / cards / sombras */
+  --color-input-bg: #1A2035;
+  --color-input-border: #242C45;
+  --color-card-bg: #141A2C;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 4px 24px rgb(119, 169, 255, 1);
+
+  --radius-card: 16px;
+  --radius-input: 12px;
+  --radius-button: 10px;
+}
+
+/* Tema Retro blanco y negro */
+[data-theme="retro"] {
+  /* Fondo y estructura */
+  --color-bg: #FFFFFF;
+  --color-surface: #F2F2F2;
+  --color-border: #000000;
+  --color-separator: #1A1A1A;
+
+  /* Primario */
+  --color-primary: #000000;
+  --color-primary-soft: #222222;
+  --color-primary-strong: #000000;
+
+  /* Tipografía */
+  --color-text-heading: #000000;
+  --color-text-body: #111111;
+  --color-text-muted: #444444;
+
+  /* Estados (retro terminal) */
+  --color-success: #00FF66;
+  --color-warning: #FFFF33;
+  --color-error: #FF0033;
+
+  /* Inputs / cards / sombras */
+  --color-input-bg: #FFFFFF;
+  --color-input-border: #000000;
+  --color-card-bg: #FDFDFD;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+
+  --radius-card: 4px;
+  --radius-input: 4px;
+  --radius-button: 4px;
+}
+
+/* Tema Cartón */
+[data-theme="carton"] {
+  /* Fondo y estructura */
+  --color-bg: #E5D3B3;
+  --color-surface: #F3E6CA;
+  --color-border: #C9B087;
+  --color-separator: #B89F77;
+
+  /* Primario */
+  --color-primary: #7A562A;
+  --color-primary-soft: #9A6C34;
+  --color-primary-strong: #5C3F1E;
+
+  /* Tipografía */
+  --color-text-heading: #3B2A17;
+  --color-text-body: #5C4B32;
+  --color-text-muted: #8A795F;
+
+  /* Estados */
+  --color-success: #6BBF4E;
+  --color-warning: #D6A84C;
+  --color-error: #C75A42;
+
+  /* Inputs / cards / sombras */
+  --color-input-bg: #F3E6CA;
+  --color-input-border: #C9B087;
+  --color-card-bg: #F3E6CA;
+  --shadow-card: 0 4px 8px rgba(99, 78, 53, 0.25);
+  --shadow-card-hover: 0 4px 24px rgb(154, 108, 52, 1);
+
+  --radius-card: 14px;
+  --radius-input: 12px;
+  --radius-button: 12px;
+}
+
+/* Tema Cartoon */
+[data-theme="cartoon"] {
+  /* Fondo y estructura */
+  --color-bg: #FDF7FF;
+  --color-surface: #FFFFFF;
+  --color-border: #E3D6FF;
+  --color-separator: #C9BAFF;
+
+  /* Primario */
+  --color-primary: #4FA3FF;
+  --color-primary-soft: #74B9FF;
+  --color-primary-strong: #308BFF;
+
+  /* Tipografía */
+  --color-text-heading: #2A2A2A;
+  --color-text-body: #555555;
+  --color-text-muted: #7A7A7A;
+
+  /* Estados */
+  --color-success: #46E87F;
+  --color-warning: #FFD54A;
+  --color-error: #FF6B6B;
+
+  /* Inputs / cards / sombras */
+  --color-input-bg: #FFFFFF;
+  --color-input-border: #E3D6FF;
+  --color-card-bg: #FFFFFF;
+  --shadow-card: 0 6px 12px rgba(160, 136, 255, 0.25);
+  --shadow-card-hover: 0 4px 24px rgb(116, 185, 255);
+
+  --radius-card: 18px;
+  --radius-input: 14px;
+  --radius-button: 16px;
+}

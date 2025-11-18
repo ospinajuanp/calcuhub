@@ -1,0 +1,31 @@
+/* diseño global, NO depende de tema (spacing, radii, tipografías base) */
+
+:root {
+  --font-family-base: 'Inter', sans-serif;
+
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-section: 64px;
+  --space-section-lg: 96px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-strong: 0 4px 20px rgba(0, 0, 0, 0.12);
+
+  --container-max-width-lg: 1280px;
+  --container-max-width-md: 1080px;
+  --container-max-width-sm: 880px;
+}
