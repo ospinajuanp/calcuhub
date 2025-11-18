@@ -46,6 +46,16 @@ export const enDictionary = {
     tmb: {
       name: 'Basal Metabolic Rate (BMR)',
       shortDescription: 'Estimate calories your body uses at rest.',
+      tmbTitle: 'Calculate your Basal Metabolic Rate (BMR)',
+      tmbWeightLabel: 'Weight',
+      tmbHeightLabel: 'Height',
+      tmbAgeLabel: 'Age',
+      tmbGenderLabel: 'Gender',
+      tmbMaleOption: 'Male',
+      tmbFemaleOption: 'Female',
+      tmbCalculateButton: 'Calculate BMR',
+      tmbResultTitle: 'BMR Result',
+      tmbYourTmbIs: 'Your BMR is {{tmb}}.',
     },
     waterIntake: {
       name: 'Daily water intake',

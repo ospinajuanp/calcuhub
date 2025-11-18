@@ -46,6 +46,16 @@ export const esDictionary = {
     tmb: {
       name: 'Tasa Metabólica Basal (TMB)',
       shortDescription: 'Estimación de calorías que tu cuerpo usa en reposo.',
+      tmbTitle: 'Calcula tu Tasa Metabólica Basal (TMB)',
+      tmbWeightLabel: 'Peso',
+      tmbHeightLabel: 'Altura',
+      tmbAgeLabel: 'Edad',
+      tmbGenderLabel: 'Género',
+      tmbMaleOption: 'Masculino',
+      tmbFemaleOption: 'Femenino',
+      tmbCalculateButton: 'Calcular TMB',
+      tmbResultTitle: 'Resultado de la TMB',
+      tmbYourTmbIs: 'Tu TMB es {{tmb}}.',
     },
     waterIntake: {
       name: 'Consumo diario de agua',

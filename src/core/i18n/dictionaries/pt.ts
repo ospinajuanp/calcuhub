@@ -46,6 +46,16 @@ export const ptDictionary = {
     tmb: {
       name: 'Taxa Metabólica Basal (TMB)',
       shortDescription: 'Calcule suas necessidades calóricas diárias.',
+      tmbTitle: 'Calcula tu Tasa Metabólica Basal (TMB)',
+      tmbWeightLabel: 'Peso',
+      tmbHeightLabel: 'Altura',
+      tmbAgeLabel: 'Edad',
+      tmbGenderLabel: 'Género',
+      tmbMaleOption: 'Masculino',
+      tmbFemaleOption: 'Femenino',
+      tmbCalculateButton: 'Calcular TMB',
+      tmbResultTitle: 'Resultado de la TMB',
+      tmbYourTmbIs: 'Tu TMB es {{tmb}}.',
     },
     waterIntake: {
       name: 'Consumo diário de água',
