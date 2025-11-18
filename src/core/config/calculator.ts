@@ -34,30 +34,32 @@ export const calculatorsConfig: CalculatorConfig[] = [
     slug: 'tmb',
     categoryId: 'health',
     iconId: 'imc',
-    i18nKey: 'calculators.tmb',    
-  },
-  {
-    id: 'waterIntake',
-    slug: 'agua-diaria',
-    categoryId: 'health',
-    iconId: 'imc',
-    i18nKey: 'calculators.waterIntake',
+    i18nKey: 'calculators.tmb',
     featured: true,
   },
   {
-    id: 'compoundInterest',
-    slug: 'interes-compuesto',
-    categoryId: 'finance',
+    id: 'waterIntake',
+    slug: 'waterIntake',
+    categoryId: 'health',
     iconId: 'imc',
-    i18nKey: 'calculators.compoundInterest',
+    i18nKey: 'calculators.waterIntake',
+    featured: false,
+    
   },
-  {
-    id: 'loanPayments',
-    slug: 'cuotas-prestamo',
-    categoryId: 'finance',
-    iconId: 'imc',
-    i18nKey: 'calculators.loanPayments',
-  },
+  // {
+  //   id: 'compoundInterest',
+  //   slug: 'compoundInterest',
+  //   categoryId: 'finance',
+  //   iconId: 'imc',
+  //   i18nKey: 'calculators.compoundInterest',
+  // },
+  // {
+  //   id: 'loanPayments',
+  //   slug: 'loanPayments',
+  //   categoryId: 'finance',
+  //   iconId: 'imc',
+  //   i18nKey: 'calculators.loanPayments',
+  // },
 ];
 
 export function getCalculatorBySlug(

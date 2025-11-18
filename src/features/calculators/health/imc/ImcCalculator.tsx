@@ -4,8 +4,8 @@ import * as operator from './imc.utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
 
 export default function ImcCalculator() {
-  const [weight, setWeight] = useState<string>('');
-  const [height, setHeight] = useState<string>('');
+  const [weight, setWeight] = useState<string>('70');
+  const [height, setHeight] = useState<string>('170');
   const [bmi, setBmi] = useState<number | null>(null);
   const [category, setCategory] = useState<string>('');
 

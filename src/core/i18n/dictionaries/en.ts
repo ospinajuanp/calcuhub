@@ -1,3 +1,5 @@
+import WaterIntake from "@/features/calculators/health/waterIntake/WaterIntake";
+
 // src/core/i18n/dictionaries/en.ts
 export const enDictionary = {
   common: {
@@ -30,6 +32,7 @@ export const enDictionary = {
     imc: {
       name: 'Body Mass Index (BMI)',
       shortDescription: 'Calculate your BMI and weight range.',
+      calculatorExplanation: 'BMI is a screening tool that helps to categorize weight status based on height and weight. It does not directly measure body fat or health.',
       bmiTitle: 'Calculate your Body Mass Index (BMI)',
       bmiWeightLabel: 'Weight',
       bmiHeightLabel: 'Height',
@@ -46,6 +49,7 @@ export const enDictionary = {
     tmb: {
       name: 'Basal Metabolic Rate (BMR)',
       shortDescription: 'Estimate calories your body uses at rest.',
+      calculatorExplanation: 'This is the number of calories your body needs to maintain basic physiological functions at rest.',
       tmbTitle: 'Calculate your Basal Metabolic Rate (BMR)',
       tmbWeightLabel: 'Weight',
       tmbHeightLabel: 'Height',
@@ -56,18 +60,31 @@ export const enDictionary = {
       tmbCalculateButton: 'Calculate BMR',
       tmbResultTitle: 'BMR Result',
       tmbYourTmbIs: 'Your BMR is {{tmb}}.',
+      tmbPerDay: 'Kcal/day',
     },
     waterIntake: {
       name: 'Daily water intake',
       shortDescription: 'Recommended water amount based on your weight.',
+      calculatorExplanation: 'This recommendation is based on general guidelines and may vary depending on individual factors such as activity level, climate, and health conditions.',
+      waterIntakeTitle: 'Calculate your daily water intake',
+      waterIntakeWeightLabel: 'Weight',
+      waterIntakeGenderLabel: 'Gender',
+      waterIntakeMaleOption: 'Male',
+      waterIntakeFemaleOption: 'Female',
+      waterIntakeCalculateButton: 'Calculate water intake',
+      waterIntakeResultTitle: 'Daily Water Intake Result',
+      waterIntakeYourIntakeIs: 'Your recommended daily water intake is between {{min}} and {{max}}.',
+      WaterIntakePerDay: 'liters/day',
     },
     compoundInterest: {
       name: 'Compound interest',
       shortDescription: 'Simulate long-term growth of your investment.',
+      calculatorExplanation:'',
     },
     loanPayments: {
       name: 'Loan payments',
       shortDescription: 'Calculate the monthly payment for your loan.',
+      calculatorExplanation:'',
     },
   },
 };

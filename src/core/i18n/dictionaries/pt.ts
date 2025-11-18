@@ -1,3 +1,5 @@
+import WaterIntake from "@/features/calculators/health/waterIntake/WaterIntake";
+
 // src/core/i18n/dictionaries/es.ts
 export const ptDictionary = {
   common: {
@@ -30,6 +32,7 @@ export const ptDictionary = {
     imc: {
       name: 'Índice de Massa Corporal (IMC)',
       shortDescription: 'Calcule seu IMC com base no peso e altura.',
+      calculatorExplanation: 'O IMC é uma ferramenta de triagem que ajuda a categorizar o estado de peso com base na altura e no peso. Não mede diretamente a gordura corporal ou a saúde.',
       bmiTitle: 'Calculadora de IMC',
       bmiWeightLabel: 'Peso',
       bmiHeightLabel: 'Altura',
@@ -46,6 +49,7 @@ export const ptDictionary = {
     tmb: {
       name: 'Taxa Metabólica Basal (TMB)',
       shortDescription: 'Calcule suas necessidades calóricas diárias.',
+      calculatorExplanation: 'Esta es una estimación de las calorías que tu cuerpo necesita para mantener funciones básicas en reposo.',
       tmbTitle: 'Calcula tu Tasa Metabólica Basal (TMB)',
       tmbWeightLabel: 'Peso',
       tmbHeightLabel: 'Altura',
@@ -56,18 +60,31 @@ export const ptDictionary = {
       tmbCalculateButton: 'Calcular TMB',
       tmbResultTitle: 'Resultado de la TMB',
       tmbYourTmbIs: 'Tu TMB es {{tmb}}.',
+      tmbPerDay: 'Kcal/día',
     },
     waterIntake: {
       name: 'Consumo diário de água',
       shortDescription: 'Calcule a quantidade ideal de água que você deve beber diariamente.',
+      calculatorExplanation: 'Esta recomendação é baseada em diretrizes gerais e pode variar dependendo de fatores individuais, como nível de atividade, clima e condições de saúde.',
+      waterIntakeTitle: 'Calcula tu consumo diario de agua',
+      waterIntakeWeightLabel: 'Peso',
+      waterIntakeGenderLabel: 'Sexo',
+      waterIntakeMaleOption: 'Masculino',
+      waterIntakeFemaleOption: 'Feminino',
+      waterIntakeCalculateButton: 'Calcular consumo de agua',
+      waterIntakeResultTitle: 'Resultado do consumo diário de água',
+      waterIntakeYourIntakeIs: 'Seu consumo diário recomendado de água está entre {{min}} e {{max}}.',
+      WaterIntakePerDay: 'litros/dia',
     },
     compoundInterest: {
       name: 'Juros Compostos',
       shortDescription: 'Calcule o valor acumulado de um investimento com juros compostos.',
+      calculatorExplanation:'',
     },
     loanPayments: {
       name: 'Pagamentos de empréstimos',
       shortDescription: 'Calcule o valor da prestação mensal do seu crédito.',
+      calculatorExplanation:'',
     },
   },
 };

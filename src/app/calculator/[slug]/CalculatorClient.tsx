@@ -8,7 +8,7 @@ interface CalculatorClientProps {
 }
 
 export function CalculatorClient({ calculator }: CalculatorClientProps) {
-  const { tCategories, tCalculators } = useTranslation();
+  const { tCalculators } = useTranslation();
 
   const calcTexts = tCalculators[calculator.id];
 
@@ -44,14 +44,11 @@ export function CalculatorClient({ calculator }: CalculatorClientProps) {
 
         </div>
         
-        {/* <div className="card calculator-result-card">
-          <h2>Información sobre esta calculadora</h2>
+        <div className="card calculator-result-card maxWidth">
           <p>
-            Aquí puedes añadir texto extendido explicando cómo se usa
-            esta calculadora, qué fórmula aplica y cómo interpretar el
-            resultado.
+            {calcTexts.calculatorExplanation}
           </p>
-        </div> */}
+        </div>
 
       </section>
 

@@ -4,9 +4,9 @@ import * as operator from './tmb.utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
 
 export default function TmbCalculator() {
-  const [weight, setWeight] = useState<string>('');
-  const [height, setHeight] = useState<string>('');
-  const [age, setAge] = useState<string>(''); 
+  const [weight, setWeight] = useState<string>('70');
+  const [height, setHeight] = useState<string>('170');
+  const [age, setAge] = useState<string>('30'); 
   const [gender, setGender] = useState<string>('male');
   const [tmb, setTmb] = useState<number | null>(null);
   const { tCalculators } = useTranslation();
@@ -45,7 +45,6 @@ export default function TmbCalculator() {
                 min="0"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                placeholder="70"
                 className='calculator-input'
               />
             </div>
@@ -60,7 +59,6 @@ export default function TmbCalculator() {
                 min="0"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                placeholder="170"
                 className='calculator-input'
               />
             </div>
@@ -75,7 +73,6 @@ export default function TmbCalculator() {
                 min="0"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
-                placeholder="30"
                 className='calculator-input'
               />
             </div>

@@ -1,3 +1,5 @@
+import WaterIntake from "@/features/calculators/health/waterIntake/WaterIntake";
+
 // src/core/i18n/dictionaries/es.ts
 export const esDictionary = {
   common: {
@@ -30,6 +32,7 @@ export const esDictionary = {
     imc: {
       name: 'Índice de Masa Corporal (IMC)',
       shortDescription: 'Calcula tu IMC y conoce tu rango de peso.',
+      calculatorExplanation: 'El IMC es una herramienta de cribado que ayuda a categorizar el estado de peso basado en la altura y el peso. No mide directamente la grasa corporal ni la salud.',
       bmiTitle: 'Calcula tu Índice de Masa Corporal (IMC)',
       bmiWeightLabel: 'Peso',
       bmiHeightLabel: 'Altura',
@@ -46,6 +49,7 @@ export const esDictionary = {
     tmb: {
       name: 'Tasa Metabólica Basal (TMB)',
       shortDescription: 'Estimación de calorías que tu cuerpo usa en reposo.',
+      calculatorExplanation: 'La Tasa Metabólica Basal (TMB) es la cantidad de calorías que tu cuerpo necesita para mantener funciones vitales en reposo. Este valor puede variar según factores individuales como edad, género, composición corporal y nivel de actividad física.',
       tmbTitle: 'Calcula tu Tasa Metabólica Basal (TMB)',
       tmbWeightLabel: 'Peso',
       tmbHeightLabel: 'Altura',
@@ -56,18 +60,32 @@ export const esDictionary = {
       tmbCalculateButton: 'Calcular TMB',
       tmbResultTitle: 'Resultado de la TMB',
       tmbYourTmbIs: 'Tu TMB es {{tmb}}.',
+      tmbPerDay: 'Kcal/día',
     },
     waterIntake: {
       name: 'Consumo diario de agua',
       shortDescription: 'Cantidad de agua recomendada según tu peso.',
+      calculatorExplanation: 'Esta recomendación se basa en pautas generales y puede variar según factores individuales como el nivel de actividad, el clima y condiciones de salud.',
+      waterIntakeTitle: 'Calcula tu consumo diario de agua',
+      waterIntakeWeightLabel: 'Peso',
+      waterIntakeGenderLabel: 'Género',
+      waterIntakeMaleOption: 'Masculino',
+      waterIntakeFemaleOption: 'Femenino',
+      waterIntakeCalculateButton: 'Calcular consumo de agua',
+      waterIntakeResultTitle: 'Resultado del consumo diario de agua',
+      waterIntakeYourIntakeIs: 'Tu consumo diario de agua recomendado está entre {{min}} y {{max}}.',
+      waterIntakeExplanation: 'This recommendation is based on general guidelines and may vary depending on individual factors such as activity level, climate, and health conditions.',
+      WaterIntakePerDay: 'litros/día',
     },
     compoundInterest: {
       name: 'Interés compuesto',
       shortDescription: 'Simula el crecimiento de tu inversión a largo plazo.',
+      calculatorExplanation:'',
     },
     loanPayments: {
       name: 'Cuotas de préstamo',
       shortDescription: 'Calcula el valor de la cuota mensual de tu crédito.',
+      calculatorExplanation:'',
     },
   },
 };
