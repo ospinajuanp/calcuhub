@@ -52,7 +52,7 @@ export default function WaterIntake() {
               <label className='calculator-label'>
                 {waterIntakeTexts.waterIntakeGenderLabel}
               </label>
-              <select className='calculator-input'>
+              <select className='calculator-input' onChange={(e) => setGender(e.target.value)}>
                 <option value="male">{waterIntakeTexts.waterIntakeMaleOption}</option>
                 <option value="female">{waterIntakeTexts.waterIntakeFemaleOption}</option>
               </select>

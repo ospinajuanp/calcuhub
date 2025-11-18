@@ -1,5 +1,3 @@
-import WaterIntake from "@/features/calculators/health/waterIntake/WaterIntake";
-
 // src/core/i18n/dictionaries/en.ts
 export const enDictionary = {
   common: {

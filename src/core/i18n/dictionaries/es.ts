@@ -1,5 +1,3 @@
-import WaterIntake from "@/features/calculators/health/waterIntake/WaterIntake";
-
 // src/core/i18n/dictionaries/es.ts
 export const esDictionary = {
   common: {
@@ -74,7 +72,6 @@ export const esDictionary = {
       waterIntakeCalculateButton: 'Calcular consumo de agua',
       waterIntakeResultTitle: 'Resultado del consumo diario de agua',
       waterIntakeYourIntakeIs: 'Tu consumo diario de agua recomendado está entre {{min}} y {{max}}.',
-      waterIntakeExplanation: 'This recommendation is based on general guidelines and may vary depending on individual factors such as activity level, climate, and health conditions.',
       WaterIntakePerDay: 'litros/día',
     },
     compoundInterest: {

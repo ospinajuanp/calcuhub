@@ -22,7 +22,7 @@ export type AppIconId =
   // calculadoras
   | 'imc'
   | 'tmb'
-  | 'water'
+  | 'waterIntake'
   | 'compound'
   | 'loan'
   // redes sociales
