@@ -41,7 +41,7 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   // Calculadoras
   imc: HeartPulse,
   tmb: BicepsFlexed,
-  water: GlassWater,
+  waterIntake: GlassWater,
   compound: BanknoteArrowUp,
   loan: BanknoteArrowDown,
 

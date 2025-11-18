@@ -33,7 +33,7 @@ export const calculatorsConfig: CalculatorConfig[] = [
     id: 'tmb',
     slug: 'tmb',
     categoryId: 'health',
-    iconId: 'imc',
+    iconId: 'tmb',
     i18nKey: 'calculators.tmb',
     featured: true,
   },
@@ -41,7 +41,7 @@ export const calculatorsConfig: CalculatorConfig[] = [
     id: 'waterIntake',
     slug: 'waterIntake',
     categoryId: 'health',
-    iconId: 'imc',
+    iconId: 'waterIntake',
     i18nKey: 'calculators.waterIntake',
     featured: false,
     
