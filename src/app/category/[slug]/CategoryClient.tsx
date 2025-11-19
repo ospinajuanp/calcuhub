@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { useTranslation } from '@/core/i18n/useTranslation';
 // recibes los datos que ya resolviste en el server: category y calculators
 import type { CategoryConfig } from '@/core/config/categories';
@@ -10,6 +11,12 @@ interface CategoryClientProps {
   category: CategoryConfig;
   calculators: CalculatorConfig[];
 }
+
+export const metadata: Metadata = {
+  title: ' Categorias de Calculadoras',
+  description: 'Categorias de diferentes tipos de calculadoras online, imc, tmb, water intake',
+  icons: '/favicon.ico',
+};
 
 export function CategoryClient({ category, calculators }: CategoryClientProps) {
   const { tCategories, tCalculators } = useTranslation();

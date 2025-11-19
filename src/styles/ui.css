@@ -206,3 +206,9 @@
 .maxWidth{
   max-width: var(--container-max-width-sm);
 }
+
+.header-img{
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}

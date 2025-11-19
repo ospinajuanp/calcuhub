@@ -7,8 +7,9 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Calculadoras Inteligentes',
-  description: 'Colección de calculadoras de salud y finanzas.',
+  title: 'Calculadoras online',
+  description: 'Colección de calculadoras, imc, tmb, water intake ',
+  icons: '/favicon.ico',
 };
 
 export default function RootLayout({
