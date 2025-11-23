@@ -36,18 +36,22 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/category/${slug}`,
+    },
     openGraph: {
       title,
       description,
+      url: `/category/${slug}`,
     },
   };
 }
 
 // 3. Página de categoría
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params;
+  const { slug } = await params;
 
-    const category = getCategoryBySlug(slug);
+  const category = getCategoryBySlug(slug);
 
   if (!category) {
     notFound();

@@ -34,9 +34,13 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/calculator/${slug}`,
+    },
     openGraph: {
       title,
       description,
+      url: `/calculator/${slug}`,
     },
   };
 }
@@ -45,7 +49,7 @@ export async function generateMetadata({
 export default async function CalculatorPage({
   params,
 }: {
-  params: Promise<{ slug: string }> 
+  params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
 
