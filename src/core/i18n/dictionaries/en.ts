@@ -14,7 +14,7 @@ export const enDictionary = {
       retro: 'Retro',
       cardboard: 'Cardboard',
       cartoon: 'Cartoon',
-    }
+    },
   },
   categories: {
     health: {

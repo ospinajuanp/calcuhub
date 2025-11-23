@@ -7,6 +7,7 @@ import { calculatorsConfig } from '../core/config/calculator';
 import { useTranslation } from '../core/i18n/useTranslation';
 import * as Icons from '../core/ui/iconRegistry';
 
+
 export default function HomePage() {
   const { tCommon, tCategories, tCalculators } = useTranslation();
 

@@ -5,6 +5,7 @@ import { LanguageProvider } from '@/core/i18n/LanguageContext';
 import { ThemeProvider } from '@/core/themes/ThemeContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import BtnBack from '@/components/ui/BtnBack';
 
 export const metadata: Metadata = {
   title: 'Calculadoras online',
@@ -25,6 +26,7 @@ export default function RootLayout({
             <div className="page">
               <div className="app-shell">
                 <Header />
+                <BtnBack/>
                 <main className="page-main">
                   {children}
                 </main>
