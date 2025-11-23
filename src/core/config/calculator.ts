@@ -35,7 +35,7 @@ export const calculatorsConfig: CalculatorConfig[] = [
     categoryId: 'health',
     iconId: 'tmb',
     i18nKey: 'calculators.tmb',
-    featured: true,
+    featured: false,
   },
   {
     id: 'waterIntake',
@@ -46,13 +46,14 @@ export const calculatorsConfig: CalculatorConfig[] = [
     featured: false,
     
   },
-  // {
-  //   id: 'compoundInterest',
-  //   slug: 'compoundInterest',
-  //   categoryId: 'finance',
-  //   iconId: 'imc',
-  //   i18nKey: 'calculators.compoundInterest',
-  // },
+  {
+    id: 'compoundInterest',
+    slug: 'compoundInterest',
+    categoryId: 'finance',
+    iconId: 'compoundInterest',
+    i18nKey: 'calculators.compoundInterest',
+    featured: true,
+  },
   // {
   //   id: 'loanPayments',
   //   slug: 'loanPayments',

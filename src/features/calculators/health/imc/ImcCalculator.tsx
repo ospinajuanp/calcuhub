@@ -7,7 +7,7 @@ export default function ImcCalculator() {
   const [weight, setWeight] = useState<string>('70');
   const [height, setHeight] = useState<string>('170');
   const [bmi, setBmi] = useState<number | null>(null);
-  const [category, setCategory] = useState<string>('');
+  const [resultCalculate, setResultCalculate] = useState<string>('');
 
   const { tCalculators } = useTranslation();
   const imcTexts = tCalculators.imc;
@@ -20,7 +20,7 @@ export default function ImcCalculator() {
 
     if (!weightValue || !heightValue || heightValue <= 0) {
       setBmi(null);
-      setCategory('Por favor ingresa valores válidos.');
+      setResultCalculate('Por favor ingresa valores válidos.');
       return;
     }
 
@@ -28,7 +28,7 @@ export default function ImcCalculator() {
     const imcResult = operator.calculateImc(weightValue, heightValue);
     setBmi(imcResult);
     const key = operator.getImcCategoryKey(imcResult);
-    setCategory(imcTexts.categories[key]);
+    setResultCalculate(imcTexts.categories[key]);
   }
  
   return (
@@ -87,7 +87,7 @@ export default function ImcCalculator() {
                 .replace('{{bmi}}', bmi.toString())
             }
           </p>
-          <p>{category}</p>
+          <p>{resultCalculate}</p>
         </div>
       )}
     </div>

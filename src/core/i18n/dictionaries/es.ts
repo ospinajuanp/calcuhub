@@ -78,6 +78,14 @@ export const esDictionary = {
       name: 'Interés compuesto',
       shortDescription: 'Simula el crecimiento de tu inversión a largo plazo.',
       calculatorExplanation:'',
+      ciTitle:'Calcular Interés compuesto',
+      ciCalculateButton:'',
+      ciCapital:'Capital inicial',
+      ciInteresRate:'',
+      ciNumberCapitalizations:'',
+      ciTimeYears:'',
+      ciBadInput:'Por favor ingresa valores válidos.',
+      ciResult:''
     },
     loanPayments: {
       name: 'Cuotas de préstamo',

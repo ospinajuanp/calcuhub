@@ -77,7 +77,15 @@ export const enDictionary = {
     compoundInterest: {
       name: 'Compound interest',
       shortDescription: 'Simulate long-term growth of your investment.',
-      calculatorExplanation:'',
+      calculatorExplanation:'With this calculator, you can estimate how much compound interest you have earned or could earn, based on your initial capital, interest rate, number of compoundings, and time in years.',
+      ciTitle:'Calculate Compound interest',
+      ciCalculateButton:'Calculate Compound Interest',
+      ciCapital:'Initial Capital',
+      ciInteresRate:'Interest Rate',
+      ciNumberCapitalizations:'Number Of Capitalizations Per Year',
+      ciTimeYears:'Time In Years',
+      ciBadInput:'Please enter valid values.',
+      ciResult:'Your compound interest in {{time}} years is equal to {{amount}}.'
     },
     loanPayments: {
       name: 'Loan payments',

@@ -78,6 +78,14 @@ export const ptDictionary = {
       name: 'Juros Compostos',
       shortDescription: 'Calcule o valor acumulado de um investimento com juros compostos.',
       calculatorExplanation:'',
+      ciTitle:'Calcula Juros Compostos',
+      ciCalculateButton:'',
+      ciCapital:'Capital inicial',
+      ciInteresRate:'',
+      ciNumberCapitalizations:'',
+      ciTimeYears:'',
+      ciBadInput:'',
+      ciResult:''
     },
     loanPayments: {
       name: 'Pagamentos de empréstimos',

@@ -18,12 +18,12 @@ export const categoriesConfig: CategoryConfig[] = [
     iconId: 'health',
     i18nKey: 'categories.health',
   },
-  // {
-  //   id: 'finance',
-  //   slug: 'finance',
-  //   iconId: 'finance',
-  //   i18nKey: 'categories.finance',
-  // },
+  {
+    id: 'finance',
+    slug: 'finance',
+    iconId: 'finance',
+    i18nKey: 'categories.finance',
+  },
 ];
 
 

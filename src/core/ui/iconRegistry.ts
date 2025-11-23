@@ -23,7 +23,7 @@ export type AppIconId =
   | 'imc'
   | 'tmb'
   | 'waterIntake'
-  | 'compound'
+  | 'compoundInterest'
   | 'loan'
   // redes sociales
   | 'socialLinkedin'
@@ -42,7 +42,7 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   imc: HeartPulse,
   tmb: BicepsFlexed,
   waterIntake: GlassWater,
-  compound: BanknoteArrowUp,
+  compoundInterest: BanknoteArrowUp,
   loan: BanknoteArrowDown,
 
   // Redes
