@@ -2,6 +2,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { LanguageProvider } from '@/core/i18n/LanguageContext';
+import { DEFAULT_LOCALE } from '@/core/i18n/locales';
 import { ThemeProvider } from '@/core/themes/ThemeContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -66,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" >
+    <html lang={DEFAULT_LOCALE.toString()} >
       <body>
         <ThemeProvider>
           <LanguageProvider>

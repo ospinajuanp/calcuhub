@@ -8,6 +8,7 @@ export const enDictionary = {
     calculatorsTitle: 'Featured calculators',
     calculatorsDescription: 'Quick access to our most used calculators.',
     madeIn: 'Made with ❤️ by ',
+    badInput:'Please enter valid values.',
     theme:{
       light: 'Light',
       dark: 'Dark',
@@ -84,13 +85,19 @@ export const enDictionary = {
       ciInteresRate:'Interest Rate',
       ciNumberCapitalizations:'Number Of Capitalizations Per Year',
       ciTimeYears:'Time In Years',
-      ciBadInput:'Please enter valid values.',
       ciResult:'Your compound interest in {{time}} years is equal to {{amount}}.'
     },
     loanPayments: {
       name: 'Loan payments',
       shortDescription: 'Calculate the monthly payment for your loan.',
-      calculatorExplanation:'',
+      calculatorExplanation:'With this calculator, you can estimate the fixed payment amount for a loan by entering the loan amount, interest rate, and term. You can also see how much you will pay in total and how much interest you will pay over time.',
+      lpCalculateButton:'Calculate Loan Payments',
+      lpTitle:'Calculate Loan Payments.',
+      lpAmount:'Loan Amount.',
+      lpInteresRate:'Annual Interest Rate.',
+      lpNumberLoanYears:'Number of Annual Payments.',
+      lpTermYears:'Term in years.',
+      lpResult:'Your payment amount is {{loan}} total to pay {{paid}}',
     },
   },
 };

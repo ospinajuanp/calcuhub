@@ -1,59 +1,58 @@
-import React, { useState } from 'react';
-import * as operador from './compoundInterest.utils'
+import React, { use, useState } from 'react';
+import * as operator from './loanPayments.utils'
 import * as operatorUtils from '@/features/calculators/utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
 
-export default function compoundInterest (){
-    const { tCalculators,tCommon } = useTranslation();
-    const ci = tCalculators.compoundInterest
+export default function LoanPayments (){
+    const { tCalculators, tCommon } = useTranslation();
+    const lp = tCalculators.loanPayments
 
-    const [amount, setAmount] = useState<number | null>(null);
+    const [resultCalculate, setResultCalculate] = useState<string | null>(null)
+    
+    const [mount, setMount] = useState<string>('100')
+    const [interestRage, setInterestRate] = useState<string>('20')
+    const [numberLoanYears,setNumberLoanYears] = useState<string>('12')
+    const [termYears, setTermYears] = useState<string>('5')
+    const [totalPaid, setTotalPaid] = useState<number>(0)
+    const mountValue = operatorUtils.parseNumber(mount);
+    const interestRageValue = operatorUtils.parseNumber(interestRage);
+    const numberLoanYearsValue = operatorUtils.parseNumber(numberLoanYears);
+    const termYearsValue = operatorUtils.parseNumber(termYears);
 
-    const [capital, setCapital] = useState<string>('100');
-    const [interestRate, setInterestRate] = useState<string>('10');
-    const [numberCapitalizations, setNumberCapitalizations] = useState<string>('1');
-    const [timeYears, setTimeYears] = useState<string>('1');
 
-    const [resultCalculate, setResultCalculate] = useState<string>('');
+    if (!mountValue || !interestRageValue || !numberLoanYearsValue || termYearsValue <= 0){
+        setTotalPaid(0)
+        setResultCalculate(tCommon.badInput);
+        return;
+    }
 
 
-    function handleCalculate (event: React.FormEvent){
+    const handleCalculate = (event : React.FormEvent)=>{
         event.preventDefault();
-        
-        const capitalValue = operatorUtils.parseNumber(capital);
-        const interestRateValue = operatorUtils.parseNumber(interestRate);
-        const numberCapitalizationsValue = operatorUtils.parseNumber(numberCapitalizations);
-        const timeYearsValue = operatorUtils.parseNumber(timeYears);
-        
-        if (!capitalValue || !interestRateValue || !numberCapitalizationsValue || timeYearsValue <= 0){
-            setAmount(null);
-            setResultCalculate(tCommon.badInput)
-            return;
-        }
 
-        const ciResult = operador.calculateCompoundInterest(capitalValue,interestRateValue,numberCapitalizationsValue,timeYearsValue);
+        const result = operator.calculateLoanPayments(mountValue,interestRageValue, numberLoanYearsValue,termYearsValue)
+        setResultCalculate(result.toString())
+        setTotalPaid(((result)*(numberLoanYearsValue*termYearsValue))-mountValue)
 
-        setAmount(ciResult);
-        
     }
 
     return (
-        <div>
-            <h2>{ci.name}</h2>
+        <>
+            <h2>{lp.lpTitle}</h2>
 
             <form onSubmit={handleCalculate}>
                 <div className='calculatoro-inputs'>
 
                     <div className='calculator-input-group'>
                         <label className='calculator-label'>
-                            {ci.ciCapital}
+                            {lp.lpAmount}
                         </label>
                         <input 
                             type="number"
                             step="0.1"
                             min="0"
-                            value={capital}
-                            onChange={(e) => setCapital(e.target.value)}
+                            value={mount}
+                            onChange={(e) => setMount(e.target.value)}
                             placeholder="100"
                             className='calculator-input'
                         />
@@ -61,13 +60,13 @@ export default function compoundInterest (){
                     
                     <div className='calculator-input-group'>
                         <label className='calculator-label'>
-                            {ci.ciInteresRate}
+                            {lp.lpInteresRate}
                         </label>
                         <input 
                             type="number"
                             step="0.1"
                             min="0"
-                            value={interestRate}
+                            value={interestRage}
                             onChange={(e) => setInterestRate(e.target.value)}
                             placeholder="10"
                             className='calculator-input'
@@ -76,14 +75,14 @@ export default function compoundInterest (){
 
                     <div className='calculator-input-group'>
                         <label className='calculator-label'>
-                            {ci.ciNumberCapitalizations}
+                            {lp.lpNumberLoanYears}
                         </label>
                         <input 
                             type="number"
                             step="0.1"
                             min="0"
-                            value={numberCapitalizations}
-                            onChange={(e) => setNumberCapitalizations(e.target.value)}
+                            value={numberLoanYears}
+                            onChange={(e) => setNumberLoanYears(e.target.value)}
                             placeholder="1"
                             className='calculator-input'
                         />
@@ -91,46 +90,41 @@ export default function compoundInterest (){
 
                     <div className='calculator-input-group'>
                         <label className='calculator-label'>
-                            {ci.ciTimeYears}
+                            {lp.lpTermYears}
                         </label>
                         <input 
                             type="number"
                             step="0.1"
                             min="0"
-                            value={timeYears}
-                            onChange={(e) => setTimeYears(e.target.value)}
+                            value={termYears}
+                            onChange={(e) => setTermYears(e.target.value) }
                             placeholder="1"
                             className='calculator-input'
                         />
                     </div>
-
-
-
 
                 </div>
 
 
                 <div className='calculator-actions'>
                     <button type="submit" className='button'>
-                        {ci.ciCalculateButton}
+                        {lp.lpCalculateButton}
                     </button>
                 </div>
             </form>
-            {amount !== null && (
+
+            {resultCalculate !== null && (
                 <div className='calculator-result-card'>
-                <h3>{ci.ciTitle}</h3>
+                <h3>{lp.lpTitle}</h3>
                 <p>
                     {
-                    ci.ciResult
-                        .replace('{{time}}', timeYears)
-                        .replace('{{amount}}',amount.toString())
+                    lp.lpResult
+                        .replace('{{loan}}', resultCalculate)
+                        .replace('{{paid}}', totalPaid.toString())
                     }
                 </p>
-                <p>{resultCalculate}</p>
                 </div>
             )}
-
-
-        </div>
+        </>
     )
 }

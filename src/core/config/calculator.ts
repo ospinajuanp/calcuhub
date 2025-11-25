@@ -54,13 +54,14 @@ export const calculatorsConfig: CalculatorConfig[] = [
     i18nKey: 'calculators.compoundInterest',
     featured: true,
   },
-  // {
-  //   id: 'loanPayments',
-  //   slug: 'loanPayments',
-  //   categoryId: 'finance',
-  //   iconId: 'imc',
-  //   i18nKey: 'calculators.loanPayments',
-  // },
+  {
+    id: 'loanPayments',
+    slug: 'loanPayments',
+    categoryId: 'finance',
+    iconId: 'loanPayments',
+    i18nKey: 'calculators.loanPayments',
+    featured: true,
+  },
 ];
 
 export function getCalculatorBySlug(

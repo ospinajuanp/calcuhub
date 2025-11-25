@@ -8,12 +8,13 @@ export const esDictionary = {
     calculatorsTitle: 'Calculadoras destacadas.',
     calculatorsDescription: 'Accede rápidamente a nuestras calculadoras más utilizadas',
     madeIn: 'Hecho con ❤️ por .',
+    badInput:'Introduzca valores válidos.',
     theme:{
-      light: 'Claro.',
-      dark: 'Oscuro.',
-      retro: 'Retro.',
-      cardboard: 'Cartón.',
-      cartoon: 'Cartoon.',
+      light: 'Claro',
+      dark: 'Oscuro',
+      retro: 'Retro',
+      cardboard: 'Cartón',
+      cartoon: 'Cartoon',
     },
   },
   categories: {
@@ -84,13 +85,21 @@ export const esDictionary = {
       ciInteresRate:'Tasa de interés.',
       ciNumberCapitalizations:'Número de capitalizaciones por año.',
       ciTimeYears:'Tiempo en años.',
-      ciBadInput:'Introduzca valores válidos.',
+      
       ciResult:'Su interés compuesto en {{time}} años es igual a {{amount}}.'
     },
     loanPayments: {
       name: 'Cuotas de préstamo.',
       shortDescription: 'Calcula el valor de la cuota mensual de tu crédito',
-      calculatorExplanation:'.',
+      calculatorExplanation:'En esta calculadora podrás estimar el valor de la cuota fija de un préstamo, ingresando el monto prestado, la tasa de interés y el plazo. También podrás ver cuánto pagarás en total y cuánto será interés a lo largo del tiempo.',
+      lpTitle:'Calcular Cuotas de prestamos',
+      lpCalculateButton:'Calcular Cuotas de préstamo',
+      lpAmount:'Monto De Prestamo',
+      lpInteresRate:'Tasa de Interes Anual.',
+      lpNumberLoanYears:'Numero de Cuotas Anuales.',
+      lpTermYears:'Plazo en años',
+      lpResult:'Su valor de la cuota es {{loan}} total a pagar {{paid}}.',
+
     },
   },
 };

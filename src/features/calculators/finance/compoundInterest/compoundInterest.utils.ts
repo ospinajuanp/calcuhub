@@ -1,3 +1,4 @@
+import * as operatorUniversal from '@/features/calculators/utils'
 
 export function calculateCompoundInterest(
   capital: number,
@@ -5,7 +6,7 @@ export function calculateCompoundInterest(
   capitalizationFrequency: number,
   years: number
 ) {
-  const rate = interestRate / 100;
+  const rate = operatorUniversal.percentage(interestRate);
 
   const rawAmount =
     capital * (1 + rate / capitalizationFrequency) **
@@ -25,7 +26,3 @@ export function calculateInterestGenerated(capital:number, compoundInterest:numb
 
 }
 
-export function parseNumber(number:string){
-
-    return parseFloat(number)
-}
