@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import * as operator from './loanPayments.utils'
 import * as operatorUtils from '@/features/calculators/utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
@@ -27,7 +27,7 @@ export default function LoanPayments (){
     }
 
 
-    const handleCalculate = (event : React.FormEvent)=>{
+    const handleCalculate = (event : React.FormEvent) => {
         event.preventDefault();
 
         const result = operator.calculateLoanPayments(mountValue,interestRageValue, numberLoanYearsValue,termYearsValue)

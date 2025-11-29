@@ -7,7 +7,8 @@ export type CalculatorId =
   | 'tmb'
   | 'waterIntake'
   | 'compoundInterest'
-  | 'loanPayments';
+  | 'loanPayments'
+  | 'tax';
 
 
 
@@ -60,6 +61,14 @@ export const calculatorsConfig: CalculatorConfig[] = [
     categoryId: 'finance',
     iconId: 'loanPayments',
     i18nKey: 'calculators.loanPayments',
+    featured: true,
+  },
+  {
+    id: 'tax',
+    slug: 'tax',
+    categoryId: 'finance',
+    iconId: 'tax',
+    i18nKey: 'calculators.tax',
     featured: true,
   },
 ];

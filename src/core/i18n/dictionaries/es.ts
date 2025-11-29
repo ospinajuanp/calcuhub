@@ -101,5 +101,15 @@ export const esDictionary = {
       lpResult:'Su valor de la cuota es {{loan}} total a pagar {{paid}}.',
 
     },
+    tax: {
+      name: 'Calculate',
+      shortDescription: '',
+      calculatorExplanation:'',
+      taxCalculateButton:'',
+      taxTitle:'Calculate ',
+      taxAmount:'',
+      taxPercentage:'',
+      taxResult:'',
+    },
   },
 };

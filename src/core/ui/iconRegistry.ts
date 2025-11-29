@@ -11,7 +11,10 @@ import {
   Globe,
   Github,
   Linkedin,
+  Percent,
 } from 'lucide-react';
+
+
 
 // TODOS los ids de iconos que vas a usar en la app
 export type AppIconId =
@@ -25,6 +28,7 @@ export type AppIconId =
   | 'waterIntake'
   | 'compoundInterest'
   | 'loanPayments'
+  | 'tax'
   // redes sociales
   | 'socialLinkedin'
   | 'socialGithub'
@@ -44,6 +48,7 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   waterIntake: GlassWater,
   compoundInterest: BanknoteArrowUp,
   loanPayments: BanknoteArrowDown,
+  tax :Percent,
 
   // Redes
   socialLinkedin: Linkedin,

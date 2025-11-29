@@ -99,5 +99,15 @@ export const ptDictionary = {
       lpTermYears:'Prazo em anos',
       lpResult:'O valor da sua prestação é {{loan}} total a pagar {{paid}}',
     },
+    tax: {
+      name: 'Calculate',
+      shortDescription: '',
+      calculatorExplanation:'',
+      taxCalculateButton:'',
+      taxTitle:'Calculate ',
+      taxAmount:'',
+      taxPercentage:'',
+      taxResult:'',
+    },
   },
 };

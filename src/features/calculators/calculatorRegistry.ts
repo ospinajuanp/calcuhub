@@ -3,6 +3,7 @@ import TmbCalculator from './health/tmb/TmbCalculator';
 import WaterIntakeCalculator from './health/waterIntake/WaterIntake';
 import CompoundInterestCalculator from './finance/compoundInterest/CompoundInterest';
 import LoanPaymentsCalculator from './finance/loanPayments/LoanPayments';
+import PercentageVat from './finance/percentageTax/PercentageTax'
 
 
 export const calculatorRegistry = {
@@ -11,5 +12,6 @@ export const calculatorRegistry = {
     waterIntake: WaterIntakeCalculator,
     compoundInterest: CompoundInterestCalculator,
     loanPayments: LoanPaymentsCalculator,
+    tax:PercentageVat,
 };
 

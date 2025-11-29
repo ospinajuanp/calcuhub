@@ -99,5 +99,16 @@ export const enDictionary = {
       lpTermYears:'Term in years.',
       lpResult:'Your payment amount is {{loan}} total to pay {{paid}}',
     },
+    tax: {
+      name: 'Tax calculator ',
+      shortDescription: 'Calculate Tax Rate',
+      calculatorExplanation:'With this calculator, you can estimate the tax payable based on a base amount and a tax rate. You will also see the total amount payable, including tax.',
+      taxCalculateButton:'Calculate Tax Rate',
+      taxTitle:'Tax Calculator',
+      taxAmount:'Purchase Value ',
+      taxPercentage:'Tax Percentage',
+      taxResult:'Its tax value is {{tax}}, total payment is {{payment}}.',
+    },
+
   },
 };
