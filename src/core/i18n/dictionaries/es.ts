@@ -102,14 +102,14 @@ export const esDictionary = {
 
     },
     tax: {
-      name: 'Calculate',
-      shortDescription: '',
-      calculatorExplanation:'',
-      taxCalculateButton:'',
-      taxTitle:'Calculate ',
-      taxAmount:'',
-      taxPercentage:'',
-      taxResult:'',
+      name: 'Calculadora de impuestos',
+      shortDescription: 'Calcular la tasa del iva',
+      calculatorExplanation:'Con esta calculadora, puede estimar el impuesto a pagar en función de un importe base y una tasa impositiva. También verá el importe total a pagar, incluidos los impuestos.',
+      taxCalculateButton:'Calcular tasa impositiva',
+      taxTitle:'Calculadora de impuestos',
+      taxAmount:'Valor de compra',
+      taxPercentage:'Porcentaje de impuestos',
+      taxResult:'El valor de los impuestos es {{tax}}, el pago total es {{payment}}',
     },
   },
 };
