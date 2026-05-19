@@ -1,28 +1,24 @@
-import * as operatorUniversal from '@/features/calculators/utils'
-
-export function calculateCompoundInterest(
-  capital: number,
-  interestRate: number,
-  capitalizationFrequency: number,
-  years: number
-) {
-  const rate = operatorUniversal.percentage(interestRate);
-
-  const rawAmount =
-    capital * (1 + rate / capitalizationFrequency) **
-    (capitalizationFrequency * years);
-
-  // Redondear a 2 decimales
-  const roundedAmount = Math.round(rawAmount * 100) / 100;
-
-  return roundedAmount;
+export interface ExactAgeResult {
+  years: number;
+  months: number;
+  days: number;
 }
 
+export function calculateExactAge(birthDate: Date, currentDate: Date): ExactAgeResult {
+  let years = currentDate.getFullYear() - birthDate.getFullYear();
+  let months = currentDate.getMonth() - birthDate.getMonth();
+  let days = currentDate.getDate() - birthDate.getDate();
 
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
 
-export function calculateInterestGenerated(capital:number, compoundInterest:number){
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
 
-    return compoundInterest - capital
-
+  return { years, months, days };
 }
-

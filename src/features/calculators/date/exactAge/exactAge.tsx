@@ -1,136 +1,67 @@
-import React, { useState } from 'react';
+'use client';
+import { useState } from 'react';
 import * as operador from './exactAge.utils'
-import * as operatorUtils from '@/features/calculators/utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
 
-export default function compoundInterest (){
-    const { tCalculators,tCommon } = useTranslation();
-    const ci = tCalculators.compoundInterest
+export default function ExactAgeCalculator() {
+    const { tCalculators } = useTranslation();
+    const ea = tCalculators.exactAge;
 
-    const [amount, setAmount] = useState<number | null>(null);
+    const [birthDate, setBirthDate] = useState<string>('');
+    const [result, setResult] = useState<operador.ExactAgeResult | null>(null);
 
-    const [capital, setCapital] = useState<string>('100');
-    const [interestRate, setInterestRate] = useState<string>('10');
-    const [numberCapitalizations, setNumberCapitalizations] = useState<string>('1');
-    const [timeYears, setTimeYears] = useState<string>('1');
-
-    const [resultCalculate, setResultCalculate] = useState<string>('');
-
-
-    function handleCalculate (event: React.FormEvent){
+    function handleCalculate(event: React.FormEvent) {
         event.preventDefault();
-        
-        const capitalValue = operatorUtils.parseNumber(capital);
-        const interestRateValue = operatorUtils.parseNumber(interestRate);
-        const numberCapitalizationsValue = operatorUtils.parseNumber(numberCapitalizations);
-        const timeYearsValue = operatorUtils.parseNumber(timeYears);
-        
-        if (!capitalValue || !interestRateValue || !numberCapitalizationsValue || timeYearsValue <= 0){
-            setAmount(null);
-            setResultCalculate(tCommon.badInput)
+
+        if (!birthDate) {
             return;
         }
 
-        const ciResult = operador.calculateCompoundInterest(capitalValue,interestRateValue,numberCapitalizationsValue,timeYearsValue);
+        const birth = new Date(birthDate);
+        const today = new Date();
 
-        setAmount(ciResult);
-        
+        if (isNaN(birth.getTime()) || birth > today) {
+            return;
+        }
+
+        const ageResult = operador.calculateExactAge(birth, today);
+        setResult(ageResult);
     }
 
     return (
         <div>
-            <h2>{ci.name}</h2>
+            <h2>{ea.name}</h2>
 
             <form onSubmit={handleCalculate}>
-                <div className='calculatoro-inputs'>
-
+                <div className='calculator-inputs'>
                     <div className='calculator-input-group'>
                         <label className='calculator-label'>
-                            {ci.ciCapital}
+                            {ea.exactAgeBirthDateLabel}
                         </label>
-                        <input 
-                            type="number"
-                            step="0.1"
-                            min="0"
-                            value={capital}
-                            onChange={(e) => setCapital(e.target.value)}
-                            placeholder="100"
+                        <input
+                            type="date"
+                            value={birthDate}
+                            onChange={(e) => setBirthDate(e.target.value)}
                             className='calculator-input'
+                            max={new Date().toISOString().split('T')[0]}
                         />
                     </div>
-                    
-                    <div className='calculator-input-group'>
-                        <label className='calculator-label'>
-                            {ci.ciInteresRate}
-                        </label>
-                        <input 
-                            type="number"
-                            step="0.1"
-                            min="0"
-                            value={interestRate}
-                            onChange={(e) => setInterestRate(e.target.value)}
-                            placeholder="10"
-                            className='calculator-input'
-                        />
-                    </div>
-
-                    <div className='calculator-input-group'>
-                        <label className='calculator-label'>
-                            {ci.ciNumberCapitalizations}
-                        </label>
-                        <input 
-                            type="number"
-                            step="0.1"
-                            min="0"
-                            value={numberCapitalizations}
-                            onChange={(e) => setNumberCapitalizations(e.target.value)}
-                            placeholder="1"
-                            className='calculator-input'
-                        />
-                    </div>
-
-                    <div className='calculator-input-group'>
-                        <label className='calculator-label'>
-                            {ci.ciTimeYears}
-                        </label>
-                        <input 
-                            type="number"
-                            step="0.1"
-                            min="0"
-                            value={timeYears}
-                            onChange={(e) => setTimeYears(e.target.value)}
-                            placeholder="1"
-                            className='calculator-input'
-                        />
-                    </div>
-
-
-
-
                 </div>
-
 
                 <div className='calculator-actions'>
                     <button type="submit" className='button'>
-                        {ci.ciCalculateButton}
+                        {ea.exactAgeCalculateButton}
                     </button>
                 </div>
             </form>
-            {amount !== null && (
+
+            {result && (
                 <div className='calculator-result-card'>
-                <h3>{ci.ciTitle}</h3>
-                <p>
-                    {
-                    ci.ciResult
-                        .replace('{{time}}', timeYears)
-                        .replace('{{amount}}',amount.toString())
-                    }
-                </p>
-                <p>{resultCalculate}</p>
+                    <h3>{ea.exactAgeResultTitle}</h3>
+                    <p>{ea.exactAgeYourAgeIs}</p>
+                    <p>{result.years} {ea.exactAgeYears}, {result.months} {ea.exactAgeMonths}, {result.days} {ea.exactAgeDays}</p>
                 </div>
             )}
-
-
         </div>
-    )
+    );
 }
