@@ -12,6 +12,8 @@ import {
   Github,
   Linkedin,
   Percent,
+  CalendarDays,
+  CalendarRange ,
 } from 'lucide-react';
 
 
@@ -22,6 +24,7 @@ export type AppIconId =
   // categorías
   | 'health'
   | 'finance'
+  | 'date'
   // calculadoras
   | 'imc'
   | 'tmb'
@@ -29,6 +32,9 @@ export type AppIconId =
   | 'compoundInterest'
   | 'loanPayments'
   | 'tax'
+  // date
+  | 'exactAge'
+
   // redes sociales
   | 'socialLinkedin'
   | 'socialGithub'
@@ -41,6 +47,7 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   // Categorías
   health: HeartPulse,
   finance: Wallet,
+  date: CalendarRange,
 
   // Calculadoras
   imc: HeartPulse,
@@ -49,6 +56,9 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   compoundInterest: BanknoteArrowUp,
   loanPayments: BanknoteArrowDown,
   tax :Percent,
+
+  // Date
+  exactAge:CalendarDays,
 
   // Redes
   socialLinkedin: Linkedin,

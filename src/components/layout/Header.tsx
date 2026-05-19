@@ -9,10 +9,9 @@ import { useTranslation } from "@/core/i18n/useTranslation";
 export default function Header() {
     const { tCommon } = useTranslation();
   return (
-    <header className="header">
-      <Link href="/" className="header-left">
-        {/* <h1>{tCommon.siteName}</h1> */}
-        <Image src={logo} alt="logo" width={154} height={102} className="header-img"/>
+    <header className="header" role="banner">
+      <Link href="/" className="header-left" aria-label="CalcuHub - Ir a la página principal">
+        <Image src={logo} alt="CalcuHub - Calculadoras Online" width={154} height={102} className="header-img"/>
       </Link>
 
       <div className="header-right">

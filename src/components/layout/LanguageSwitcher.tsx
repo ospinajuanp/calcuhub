@@ -12,11 +12,14 @@ export default function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div>
+    <div className="language-switcher">
+      <label htmlFor="language-select" className="sr-only">Cambiar idioma</label>
       <select
+        id="language-select"
         value={locale}
         onChange={(e) => setLocale(e.target.value as any)}
         className="switcher-select"
+        aria-label="Seleccionar idioma"
       >
         {LANGUAGE_OPTIONS.map((opt) => (
           <option key={opt.id} value={opt.id}>

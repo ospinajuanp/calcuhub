@@ -18,10 +18,13 @@ export default function ThemeSwitcher() {
 
   return (
     <div className="theme-switcher">
+      <label htmlFor="theme-select" className="sr-only">Cambiar tema</label>
       <select
+        id="theme-select"
         value={theme}
         onChange={(e) => setTheme(e.target.value as any)}
         className="switcher-select"
+        aria-label="Seleccionar tema visual"
       >
         {THEME_OPTIONS.map((opt) => (
           <option key={opt.id} value={opt.id}>

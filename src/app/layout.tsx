@@ -1,13 +1,18 @@
 // src/app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
-import { LanguageProvider } from '@/core/i18n/LanguageContext';
-import { DEFAULT_LOCALE } from '@/core/i18n/locales';
+import { LanguageProvider, useLanguage } from '@/core/i18n/LanguageContext';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from '@/core/i18n/locales';
 import { ThemeProvider } from '@/core/themes/ThemeContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import BtnBack from '@/components/ui/BtnBack';
 import JsonLd from '@/components/seo/JsonLd';
+
+function MetadataWrapper({ children }: { children: React.ReactNode }) {
+  const { locale } = useLanguage();
+  return <div lang={locale}>{children}</div>;
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'),
@@ -34,24 +39,32 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://calcuhub-lovat.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app',
     siteName: 'CalcuHub',
     title: 'Calculadoras Online - CalcuHub',
     description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más.',
     images: [
       {
-        url: '/og-image.jpg', // Needs to be created or added
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'CalcuHub - Calculadoras Online',
       },
     ],
   },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app',
+    languages: {
+      'es': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}`,
+      'en': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/en`,
+      'pt': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/pt`,
+    },
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Calculadoras Online - CalcuHub',
     description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más.',
-    images: ['/og-image.jpg'], // Needs to be created or added
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/og-image.png`],
     creator: '@calcuhub',
   },
   icons: {
@@ -61,29 +74,36 @@ export const metadata: Metadata = {
   },
 };
 
+function RootLayoutContent({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="page">
+          <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
+          <div className="app-shell">
+            <JsonLd />
+            <Header />
+            <BtnBack />
+            <main id="main-content" className="page-main" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang={DEFAULT_LOCALE.toString()} >
+    <html lang={DEFAULT_LOCALE} suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <LanguageProvider>
-            <div className="page">
-              <div className="app-shell">
-                <JsonLd />
-                <Header />
-                <BtnBack />
-                <main className="page-main">
-                  {children}
-                </main>
-                <Footer />
-              </div>
-            </div>
-          </LanguageProvider>
-        </ThemeProvider>
+        <RootLayoutContent>{children}</RootLayoutContent>
       </body>
     </html>
   );

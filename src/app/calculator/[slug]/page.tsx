@@ -28,6 +28,7 @@ export async function generateMetadata({
   const dict = getDictionary(DEFAULT_LOCALE);
   const texts = dict.calculators[calculator.id];
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app';
   const title = `${texts.name} · ${dict.common.siteName}`;
   const description = texts.shortDescription;
 
@@ -35,12 +36,29 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `/calculator/${slug}`,
+      canonical: `${baseUrl}/calculator/${slug}`,
     },
     openGraph: {
       title,
       description,
-      url: `/calculator/${slug}`,
+      url: `${baseUrl}/calculator/${slug}`,
+      siteName: 'CalcuHub',
+      type: 'website',
+      locale: 'es_ES',
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: texts.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${baseUrl}/og-image.png`],
     },
   };
 }

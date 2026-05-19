@@ -26,6 +26,10 @@ export const enDictionary = {
       name: 'Finance',
       description: 'Tools to better understand your money.',
     },
+    date: {
+      name: 'Date',
+      description: 'Calculators to calculate dates and time.',
+    },
   },
   calculators: {
     imc: {
@@ -108,6 +112,19 @@ export const enDictionary = {
       taxAmount:'Purchase Value ',
       taxPercentage:'Tax Percentage',
       taxResult:'Its tax value is {{tax}}, total payment is {{payment}}.',
+    },
+    exactAge: {
+      name: 'Exact age calculator',
+      shortDescription: 'Calculate your exact age in years, months and days',
+      calculatorExplanation: 'This calculator allows you to know your exact age including years, months and days from your date of birth to today.',
+      exactAgeTitle: 'Calculate your exact age',
+      exactAgeBirthDateLabel: 'Date of birth',
+      exactAgeCalculateButton: 'Calculate age',
+      exactAgeResultTitle: 'Your exact age',
+      exactAgeYourAgeIs: 'Your exact age is:',
+      exactAgeYears: 'years',
+      exactAgeMonths: 'months',
+      exactAgeDays: 'days',
     },
 
   },

@@ -1,7 +1,7 @@
 // src/core/config/categories.ts
 import type { AppIconId } from '../ui/iconRegistry';
 
-export type CategoryId = 'health' | 'finance'; 
+export type CategoryId = 'health' | 'finance' | 'date'; 
 
 export interface CategoryConfig {
   id: CategoryId;
@@ -24,6 +24,13 @@ export const categoriesConfig: CategoryConfig[] = [
     iconId: 'finance',
     i18nKey: 'categories.finance',
   },
+  {
+    id: 'date',
+    slug: 'date',
+    iconId: 'date',
+    i18nKey: 'categories.date',
+  },
+
 ];
 
 

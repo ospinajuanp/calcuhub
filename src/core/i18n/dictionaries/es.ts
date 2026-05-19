@@ -26,6 +26,10 @@ export const esDictionary = {
       name: 'Finanzas.',
       description: 'Herramientas para entender mejor tu dinero'
     },
+    date: {
+      name: 'Fecha.',
+      description: 'Calculadoras para calcular fechas y tiempo'
+    },
   },
   calculators: {
     imc: {
@@ -110,6 +114,19 @@ export const esDictionary = {
       taxAmount:'Valor de compra',
       taxPercentage:'Porcentaje de impuestos',
       taxResult:'El valor de los impuestos es {{tax}}, el pago total es {{payment}}',
+    },
+    exactAge: {
+      name: 'Calculadora de edad exacta',
+      shortDescription: 'Calcula tu edad exacta en años, meses y días',
+      calculatorExplanation:'Esta calculadora te permite conocer tu edad exacta incluyendo años, meses y días desde tu fecha de nacimiento hasta hoy.',
+      exactAgeTitle: 'Calcula tu edad exacta',
+      exactAgeBirthDateLabel: 'Fecha de nacimiento',
+      exactAgeCalculateButton: 'Calcular edad',
+      exactAgeResultTitle: 'Tu edad exacta',
+      exactAgeYourAgeIs: 'Tu edad exacta es:',
+      exactAgeYears: 'años',
+      exactAgeMonths: 'meses',
+      exactAgeDays: 'días',
     },
   },
 };

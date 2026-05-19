@@ -8,7 +8,8 @@ export type CalculatorId =
   | 'waterIntake'
   | 'compoundInterest'
   | 'loanPayments'
-  | 'tax';
+  | 'tax'
+  | 'exactAge';
 
 
 
@@ -69,6 +70,14 @@ export const calculatorsConfig: CalculatorConfig[] = [
     categoryId: 'finance',
     iconId: 'tax',
     i18nKey: 'calculators.tax',
+    featured: true,
+  },
+  {
+    id: 'exactAge',
+    slug: 'exactAge',
+    categoryId: 'date',
+    iconId: 'exactAge',
+    i18nKey: 'calculators.exactAge',
     featured: true,
   },
 ];

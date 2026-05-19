@@ -4,6 +4,7 @@ import WaterIntakeCalculator from './health/waterIntake/WaterIntake';
 import CompoundInterestCalculator from './finance/compoundInterest/CompoundInterest';
 import LoanPaymentsCalculator from './finance/loanPayments/LoanPayments';
 import PercentageVat from './finance/percentageTax/PercentageTax'
+import ExactAge from './date/exactAge/exactAge'
 
 
 export const calculatorRegistry = {
@@ -13,5 +14,6 @@ export const calculatorRegistry = {
     compoundInterest: CompoundInterestCalculator,
     loanPayments: LoanPaymentsCalculator,
     tax:PercentageVat,
+    exactAge:ExactAge,
 };
 

@@ -26,6 +26,10 @@ export const ptDictionary = {
       name: 'Finanças.',
       description: 'Calculadoras para gerenciar seu dinheiro e investimentos.',
     },
+    date: {
+      name: 'Data.',
+      description: 'Calculadoras para calcular datas e tempo.',
+    },
   },
   calculators: {
     imc: {
@@ -108,6 +112,19 @@ export const ptDictionary = {
       taxAmount:'Valor da compra',
       taxPercentage:'Porcentagem do imposto',
       taxResult:'O valor do imposto é {{tax}}, o pagamento total é {{payment}}.',
+    },
+    exactAge: {
+      name: 'Calculadora de idade exata',
+      shortDescription: 'Calcule sua idade exata em anos, meses e dias',
+      calculatorExplanation: 'Esta calculadora permite conhecer sua idade exata incluindo anos, meses e dias desde sua data de nascimento até hoje.',
+      exactAgeTitle: 'Calcule sua idade exata',
+      exactAgeBirthDateLabel: 'Data de nascimento',
+      exactAgeCalculateButton: 'Calcular idade',
+      exactAgeResultTitle: 'Sua idade exata',
+      exactAgeYourAgeIs: 'Sua idade exata é:',
+      exactAgeYears: 'anos',
+      exactAgeMonths: 'meses',
+      exactAgeDays: 'dias',
     },
   },
 };
