@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 export type ThemeName = 'light' | 'dark' | 'retro' | 'carton' | 'cartoon';
 
@@ -13,25 +13,21 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const THEME_STORAGE_KEY = 'qch-theme';
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeName>('light');
+function getInitialTheme(): ThemeName {
+  if (typeof window === 'undefined') return 'light';
+  const stored = localStorage.getItem(THEME_STORAGE_KEY) as ThemeName | null;
+  return stored || 'light';
+}
 
-  // Leer tema inicial desde localStorage (solo en cliente)
-  useEffect(() => {
-    const stored = window.localStorage.getItem(THEME_STORAGE_KEY) as ThemeName | null;
-    if (stored) {
-      applyTheme(stored);
-    } else {
-      applyTheme('light');
-    }
-  }, []);
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setThemeState] = useState<ThemeName>(getInitialTheme);
 
   function applyTheme(next: ThemeName) {
     setThemeState(next);
     if (typeof document !== 'undefined') {
       document.documentElement.dataset.theme = next;
     }
-    window.localStorage.setItem(THEME_STORAGE_KEY, next);
+    localStorage.setItem(THEME_STORAGE_KEY, next);
   }
 
   return (

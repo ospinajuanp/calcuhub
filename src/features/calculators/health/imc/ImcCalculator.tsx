@@ -9,7 +9,7 @@ export default function ImcCalculator() {
   const [bmi, setBmi] = useState<number | null>(null);
   const [resultCalculate, setResultCalculate] = useState<string>('');
 
-  const { tCalculators } = useTranslation();
+  const { tCalculators, tCommon } = useTranslation();
   const imcTexts = tCalculators.imc;
 
   function handleCalculate(event: React.FormEvent) {
@@ -20,7 +20,7 @@ export default function ImcCalculator() {
 
     if (!weightValue || !heightValue || heightValue <= 0) {
       setBmi(null);
-      setResultCalculate('Por favor ingresa valores válidos.');
+      setResultCalculate(tCommon.badInput);
       return;
     }
 
@@ -38,11 +38,12 @@ export default function ImcCalculator() {
       <form onSubmit={handleCalculate} className='calculator-form'>
         <div className='calculator-inputs'>
           <div className='calculator-input-group'>
-            <label className='calculator-label'>
+            <label className='calculator-label' htmlFor="bmi-weight">
               {imcTexts.bmiWeightLabel}
               <span> (kg)</span>
             </label>
             <input
+              id="bmi-weight"
               type="number"
               step="0.1"
               min="0"
@@ -54,11 +55,12 @@ export default function ImcCalculator() {
           </div>
 
           <div className='calculator-input-group'>
-            <label className='calculator-label'>
+            <label className='calculator-label' htmlFor="bmi-height">
               {imcTexts.bmiHeightLabel}
               <span> (cm)</span>
             </label>
             <input
+              id="bmi-height"
               type="number"
               step="0.1"
               min="0"

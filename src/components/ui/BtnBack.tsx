@@ -17,8 +17,9 @@ export default function BtnBack (){
     return(
         <>
             <button
-                className='button btn-back '
+                className='button btn-back'
                 onClick={handleBack}
+                aria-label="Volver a la página anterior"
             >
                 <CircleArrowLeft/>
             </button>

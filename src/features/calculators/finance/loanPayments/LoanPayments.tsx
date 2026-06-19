@@ -8,29 +8,28 @@ export default function LoanPayments (){
     const lp = tCalculators.loanPayments
 
     const [resultCalculate, setResultCalculate] = useState<string | null>(null)
-    
+
     const [mount, setMount] = useState<string>('100')
-    const [interestRage, setInterestRate] = useState<string>('20')
+    const [interestRate, setInterestRate] = useState<string>('20')
     const [numberLoanYears,setNumberLoanYears] = useState<string>('12')
     const [termYears, setTermYears] = useState<string>('5')
     const [totalPaid, setTotalPaid] = useState<number>(0)
-    const mountValue = operatorUtils.parseNumber(mount);
-    const interestRageValue = operatorUtils.parseNumber(interestRage);
-    const numberLoanYearsValue = operatorUtils.parseNumber(numberLoanYears);
-    const termYearsValue = operatorUtils.parseNumber(termYears);
-
-
-    if (!mountValue || !interestRageValue || !numberLoanYearsValue || termYearsValue <= 0){
-        setTotalPaid(0)
-        setResultCalculate(tCommon.badInput);
-        return;
-    }
-
 
     const handleCalculate = (event : React.FormEvent) => {
         event.preventDefault();
 
-        const result = operator.calculateLoanPayments(mountValue,interestRageValue, numberLoanYearsValue,termYearsValue)
+        const mountValue = operatorUtils.parseNumber(mount);
+        const interestRateValue = operatorUtils.parseNumber(interestRate);
+        const numberLoanYearsValue = operatorUtils.parseNumber(numberLoanYears);
+        const termYearsValue = operatorUtils.parseNumber(termYears);
+
+        if (!mountValue || !interestRateValue || !numberLoanYearsValue || termYearsValue <= 0){
+            setTotalPaid(0)
+            setResultCalculate(tCommon.badInput);
+            return;
+        }
+
+        const result = operator.calculateLoanPayments(mountValue,interestRateValue, numberLoanYearsValue,termYearsValue)
         setResultCalculate(result.toString())
         setTotalPaid(((result)*(numberLoanYearsValue*termYearsValue))-mountValue)
 
@@ -41,13 +40,14 @@ export default function LoanPayments (){
             <h2>{lp.lpTitle}</h2>
 
             <form onSubmit={handleCalculate}>
-                <div className='calculatoro-inputs'>
+                <div className='calculator-inputs'>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="lp-amount">
                             {lp.lpAmount}
                         </label>
-                        <input 
+                        <input
+                            id="lp-amount"
                             type="number"
                             step="0.1"
                             min="0"
@@ -57,16 +57,17 @@ export default function LoanPayments (){
                             className='calculator-input'
                         />
                     </div>
-                    
+
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="lp-interest-rate">
                             {lp.lpInteresRate}
                         </label>
-                        <input 
+                        <input
+                            id="lp-interest-rate"
                             type="number"
                             step="0.1"
                             min="0"
-                            value={interestRage}
+                            value={interestRate}
                             onChange={(e) => setInterestRate(e.target.value)}
                             placeholder="10"
                             className='calculator-input'
@@ -74,10 +75,11 @@ export default function LoanPayments (){
                     </div>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="lp-number-loan-years">
                             {lp.lpNumberLoanYears}
                         </label>
-                        <input 
+                        <input
+                            id="lp-number-loan-years"
                             type="number"
                             step="0.1"
                             min="0"
@@ -89,10 +91,11 @@ export default function LoanPayments (){
                     </div>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="lp-term-years">
                             {lp.lpTermYears}
                         </label>
-                        <input 
+                        <input
+                            id="lp-term-years"
                             type="number"
                             step="0.1"
                             min="0"

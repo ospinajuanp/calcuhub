@@ -13,17 +13,18 @@ export default function PercentageVat () {
         const [mount, setMount] = useState<string>('100')
         const [percentage, setPercentage] = useState<string>('20')
 
-        const mountValue = operatorUtils.parseNumber(mount);
-        const percentageValue = operatorUtils.parseNumber(percentage);
-
-        if (!mountValue || percentageValue <= 0){
-            setTaxPayment(0)
-            setResultCalculate(tCommon.badInput);
-            return;
-        }
-
         const handleCalculate = (event : React.FormEvent) => {
             event.preventDefault();
+
+            const mountValue = operatorUtils.parseNumber(mount);
+            const percentageValue = operatorUtils.parseNumber(percentage);
+
+            if (!mountValue || percentageValue <= 0){
+                setTaxPayment(0)
+                setResultCalculate(tCommon.badInput);
+                return;
+            }
+
             const result = operator.calculatePercentageTax(mountValue,percentageValue)
             setResultCalculate(result.toString())
             setTaxPayment(result+mountValue)
@@ -37,12 +38,13 @@ export default function PercentageVat () {
 
             <form onSubmit={handleCalculate}>
 
-                <div className='calculatoro-inputs'>
+                <div className='calculator-inputs'>
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="tax-amount">
                             {tax.taxAmount}
                         </label>
-                        <input 
+                        <input
+                            id="tax-amount"
                             type="number"
                             step="0.1"
                             min="0"
@@ -54,10 +56,11 @@ export default function PercentageVat () {
                     </div>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="tax-percentage">
                             {tax.taxPercentage}
                         </label>
-                        <input 
+                        <input
+                            id="tax-percentage"
                             type="number"
                             step="0.1"
                             min="0"

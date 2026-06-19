@@ -72,6 +72,9 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  other: {
+    'theme-color': '#337BFF',
+  },
 };
 
 function RootLayoutContent({ children }: { children: React.ReactNode }) {

@@ -9,7 +9,21 @@ export type CalculatorId =
   | 'compoundInterest'
   | 'loanPayments'
   | 'tax'
-  | 'exactAge';
+  | 'exactAge'
+  | 'mortgage'
+  | 'tips'
+  | 'discount'
+  | 'tdee'
+  | 'ovulation'
+  | 'sleep'
+  | 'childBmi'
+  | 'savings'
+  | 'currency'
+  | 'dateDiff'
+  | 'units'
+  | 'percentage'
+  | 'speed'
+  | 'grades';
 
 
 
@@ -19,7 +33,7 @@ export interface CalculatorConfig {
   categoryId: CategoryId;
   iconId: AppIconId;
   i18nKey: `calculators.${CalculatorId}`;
-  featured?: boolean; // para saber si mostrarla en Home
+  featured?: boolean;
 }
 
 export const calculatorsConfig: CalculatorConfig[] = [
@@ -46,7 +60,38 @@ export const calculatorsConfig: CalculatorConfig[] = [
     iconId: 'waterIntake',
     i18nKey: 'calculators.waterIntake',
     featured: false,
-    
+  },
+  {
+    id: 'tdee',
+    slug: 'tdee',
+    categoryId: 'health',
+    iconId: 'tdee',
+    i18nKey: 'calculators.tdee',
+    featured: true,
+  },
+  {
+    id: 'ovulation',
+    slug: 'ovulation',
+    categoryId: 'health',
+    iconId: 'ovulation',
+    i18nKey: 'calculators.ovulation',
+    featured: false,
+  },
+  {
+    id: 'sleep',
+    slug: 'sleep',
+    categoryId: 'health',
+    iconId: 'sleep',
+    i18nKey: 'calculators.sleep',
+    featured: false,
+  },
+  {
+    id: 'childBmi',
+    slug: 'childBmi',
+    categoryId: 'health',
+    iconId: 'childBmi',
+    i18nKey: 'calculators.childBmi',
+    featured: false,
   },
   {
     id: 'compoundInterest',
@@ -73,12 +118,92 @@ export const calculatorsConfig: CalculatorConfig[] = [
     featured: true,
   },
   {
+    id: 'mortgage',
+    slug: 'mortgage',
+    categoryId: 'finance',
+    iconId: 'mortgage',
+    i18nKey: 'calculators.mortgage',
+    featured: false,
+  },
+  {
+    id: 'tips',
+    slug: 'tips',
+    categoryId: 'finance',
+    iconId: 'tips',
+    i18nKey: 'calculators.tips',
+    featured: false,
+  },
+  {
+    id: 'discount',
+    slug: 'discount',
+    categoryId: 'finance',
+    iconId: 'discount',
+    i18nKey: 'calculators.discount',
+    featured: false,
+  },
+  {
+    id: 'savings',
+    slug: 'savings',
+    categoryId: 'finance',
+    iconId: 'savings',
+    i18nKey: 'calculators.savings',
+    featured: false,
+  },
+  {
+    id: 'currency',
+    slug: 'currency',
+    categoryId: 'finance',
+    iconId: 'currency',
+    i18nKey: 'calculators.currency',
+    featured: false,
+  },
+  {
     id: 'exactAge',
     slug: 'exactAge',
     categoryId: 'date',
     iconId: 'exactAge',
     i18nKey: 'calculators.exactAge',
     featured: true,
+  },
+  {
+    id: 'dateDiff',
+    slug: 'dateDiff',
+    categoryId: 'date',
+    iconId: 'dateDiff',
+    i18nKey: 'calculators.dateDiff',
+    featured: false,
+  },
+  {
+    id: 'units',
+    slug: 'units',
+    categoryId: 'utilities',
+    iconId: 'units',
+    i18nKey: 'calculators.units',
+    featured: true,
+  },
+  {
+    id: 'percentage',
+    slug: 'percentage',
+    categoryId: 'utilities',
+    iconId: 'percentage',
+    i18nKey: 'calculators.percentage',
+    featured: false,
+  },
+  {
+    id: 'speed',
+    slug: 'speed',
+    categoryId: 'utilities',
+    iconId: 'speed',
+    i18nKey: 'calculators.speed',
+    featured: false,
+  },
+  {
+    id: 'grades',
+    slug: 'grades',
+    categoryId: 'utilities',
+    iconId: 'grades',
+    i18nKey: 'calculators.grades',
+    featured: false,
   },
 ];
 

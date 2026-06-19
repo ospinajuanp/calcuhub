@@ -31,15 +31,16 @@ export default function TmbCalculator() {
   return (
     <div>
       <h2>{tmbTexts.tmbTitle}</h2>
-      
+
       <form onSubmit={handleCalculate}>
         <div className='calculator-form'>
           <div className='calculator-inputs'>
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="tmb-weight">
                 {tmbTexts.tmbWeightLabel} (kg)
               </label>
               <input
+                id="tmb-weight"
                 type="number"
                 step="0.1"
                 min="0"
@@ -50,10 +51,11 @@ export default function TmbCalculator() {
             </div>
 
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="tmb-height">
                 {tmbTexts.tmbHeightLabel} (cm)
               </label>
               <input
+                id="tmb-height"
                 type="number"
                 step="0.1"
                 min="0"
@@ -64,10 +66,11 @@ export default function TmbCalculator() {
             </div>
 
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="tmb-age">
                 {tmbTexts.tmbAgeLabel}
               </label>
               <input
+                id="tmb-age"
                 type="number"
                 step="1"
                 min="0"
@@ -76,12 +79,14 @@ export default function TmbCalculator() {
                 className='calculator-input'
               />
             </div>
-            
+
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="tmb-gender">
                 {tmbTexts.tmbGenderLabel}
               </label>
-              <select className='calculator-input'
+              <select
+                id="tmb-gender"
+                className='calculator-input'
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >

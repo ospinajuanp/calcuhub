@@ -12,17 +12,15 @@ export default function WaterIntake() {
   
   function handleCalculate(event: React.FormEvent) {
     event.preventDefault();
-    
-    const weightValue = parseFloat(weight);
 
-    alert(weightValue);
+    const weightValue = parseFloat(weight);
 
     if (!weightValue || weightValue <= 0) {
       setIntake(null);
       return;
     }
 
-    const intakeResult = operator.calculateWaterIntake(weightValue, gender)
+    const intakeResult = operator.calculateWaterIntake(weightValue, gender);
     setIntake(intakeResult);
   }
 
@@ -35,10 +33,11 @@ export default function WaterIntake() {
         <div className='calculator-form'>
           <div className='calculator-inputs'>
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="water-weight">
                 {waterIntakeTexts.waterIntakeWeightLabel} (kg)
               </label>
               <input
+                id="water-weight"
                 type="number"
                 step="0.1"
                 min="0"
@@ -49,10 +48,14 @@ export default function WaterIntake() {
             </div>
 
             <div className='calculator-input-group'>
-              <label className='calculator-label'>
+              <label className='calculator-label' htmlFor="water-gender">
                 {waterIntakeTexts.waterIntakeGenderLabel}
               </label>
-              <select className='calculator-input' onChange={(e) => setGender(e.target.value)}>
+              <select
+                id="water-gender"
+                className='calculator-input'
+                onChange={(e) => setGender(e.target.value)}
+              >
                 <option value="male">{waterIntakeTexts.waterIntakeMaleOption}</option>
                 <option value="female">{waterIntakeTexts.waterIntakeFemaleOption}</option>
               </select>

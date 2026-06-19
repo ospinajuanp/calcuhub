@@ -3,7 +3,7 @@ import * as operador from './compoundInterest.utils'
 import * as operatorUtils from '@/features/calculators/utils'
 import { useTranslation } from '@/core/i18n/useTranslation';
 
-export default function compoundInterest (){
+export default function CompoundInterest (){
     const { tCalculators,tCommon } = useTranslation();
     const ci = tCalculators.compoundInterest
 
@@ -39,16 +39,17 @@ export default function compoundInterest (){
 
     return (
         <div>
-            <h2>{ci.name}</h2>
+            <h2>{ci.ciTitle}</h2>
 
             <form onSubmit={handleCalculate}>
-                <div className='calculatoro-inputs'>
+                <div className='calculator-inputs'>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="ci-capital">
                             {ci.ciCapital}
                         </label>
-                        <input 
+                        <input
+                            id="ci-capital"
                             type="number"
                             step="0.1"
                             min="0"
@@ -58,12 +59,13 @@ export default function compoundInterest (){
                             className='calculator-input'
                         />
                     </div>
-                    
+
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="ci-interest-rate">
                             {ci.ciInteresRate}
                         </label>
-                        <input 
+                        <input
+                            id="ci-interest-rate"
                             type="number"
                             step="0.1"
                             min="0"
@@ -75,10 +77,11 @@ export default function compoundInterest (){
                     </div>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="ci-capitalizations">
                             {ci.ciNumberCapitalizations}
                         </label>
-                        <input 
+                        <input
+                            id="ci-capitalizations"
                             type="number"
                             step="0.1"
                             min="0"
@@ -90,10 +93,11 @@ export default function compoundInterest (){
                     </div>
 
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="ci-time">
                             {ci.ciTimeYears}
                         </label>
-                        <input 
+                        <input
+                            id="ci-time"
                             type="number"
                             step="0.1"
                             min="0"
@@ -103,9 +107,6 @@ export default function compoundInterest (){
                             className='calculator-input'
                         />
                     </div>
-
-
-
 
                 </div>
 

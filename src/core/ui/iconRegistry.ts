@@ -13,7 +13,19 @@ import {
   Linkedin,
   Percent,
   CalendarDays,
-  CalendarRange ,
+  CalendarRange,
+  Home,
+  Coins,
+  Tag,
+  Flame,
+  CalendarHeart,
+  Moon,
+  Baby,
+  PiggyBank,
+  Currency,
+  Ruler,
+  Gauge,
+  GraduationCap,
 } from 'lucide-react';
 
 
@@ -25,6 +37,7 @@ export type AppIconId =
   | 'health'
   | 'finance'
   | 'date'
+  | 'utilities'
   // calculadoras
   | 'imc'
   | 'tmb'
@@ -32,8 +45,21 @@ export type AppIconId =
   | 'compoundInterest'
   | 'loanPayments'
   | 'tax'
-  // date
   | 'exactAge'
+  | 'mortgage'
+  | 'tips'
+  | 'discount'
+  | 'tdee'
+  | 'ovulation'
+  | 'sleep'
+  | 'childBmi'
+  | 'savings'
+  | 'currency'
+  | 'dateDiff'
+  | 'units'
+  | 'percentage'
+  | 'speed'
+  | 'grades'
 
   // redes sociales
   | 'socialLinkedin'
@@ -48,17 +74,36 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   health: HeartPulse,
   finance: Wallet,
   date: CalendarRange,
+  utilities: Gauge,
 
-  // Calculadoras
+  // Calculadoras - Health
   imc: HeartPulse,
   tmb: BicepsFlexed,
   waterIntake: GlassWater,
+  tdee: Flame,
+  ovulation: CalendarHeart,
+  sleep: Moon,
+  childBmi: Baby,
+
+  // Calculadoras - Finance
   compoundInterest: BanknoteArrowUp,
   loanPayments: BanknoteArrowDown,
-  tax :Percent,
+  tax: Percent,
+  mortgage: Home,
+  tips: Coins,
+  discount: Tag,
+  savings: PiggyBank,
+  currency: Currency,
 
-  // Date
-  exactAge:CalendarDays,
+  // Calculadoras - Date
+  exactAge: CalendarDays,
+  dateDiff: CalendarRange,
+
+  // Calculadoras - Utilities
+  units: Ruler,
+  percentage: Percent,
+  speed: Gauge,
+  grades: GraduationCap,
 
   // Redes
   socialLinkedin: Linkedin,

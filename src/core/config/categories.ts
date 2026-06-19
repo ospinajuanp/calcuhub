@@ -1,20 +1,19 @@
 // src/core/config/categories.ts
 import type { AppIconId } from '../ui/iconRegistry';
 
-export type CategoryId = 'health' | 'finance' | 'date'; 
+export type CategoryId = 'health' | 'finance' | 'date' | 'utilities';
 
 export interface CategoryConfig {
   id: CategoryId;
   slug: string;
   iconId: AppIconId;
-  // clave base para buscar textos
   i18nKey: `categories.${CategoryId}`;
 }
 
 export const categoriesConfig: CategoryConfig[] = [
   {
     id: 'health',
-    slug: 'health', 
+    slug: 'health',
     iconId: 'health',
     i18nKey: 'categories.health',
   },
@@ -30,7 +29,12 @@ export const categoriesConfig: CategoryConfig[] = [
     iconId: 'date',
     i18nKey: 'categories.date',
   },
-
+  {
+    id: 'utilities',
+    slug: 'utilities',
+    iconId: 'utilities',
+    i18nKey: 'categories.utilities',
+  },
 ];
 
 

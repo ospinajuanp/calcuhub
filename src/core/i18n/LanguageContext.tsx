@@ -15,14 +15,29 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+  const [locale, setLocale] = useState<Locale>(() => {
+    if (typeof window !== 'undefined') {
+      const savedLocale = localStorage.getItem('calcuhub-locale') as Locale;
+      if (savedLocale && ['es', 'en', 'pt'].includes(savedLocale)) {
+        return savedLocale;
+      }
+    }
+    return DEFAULT_LOCALE;
+  });
 
   const dictionary = useMemo(() => getDictionary(locale), [locale]);
+
+  const handleSetLocale = (newLocale: Locale) => {
+    setLocale(newLocale);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('calcuhub-locale', newLocale);
+    }
+  };
 
   const value: LanguageContextValue = {
     locale,
     dictionary,
-    setLocale,
+    setLocale: handleSetLocale,
   };
 
   return (

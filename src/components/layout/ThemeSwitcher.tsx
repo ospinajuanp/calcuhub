@@ -1,6 +1,7 @@
 'use client';
 import { useTranslation } from '@/core/i18n/useTranslation';
 import { useTheme } from '@/core/themes/ThemeContext';
+import { type ThemeName } from '@/core/themes/ThemeContext';
 
 
 
@@ -22,7 +23,7 @@ export default function ThemeSwitcher() {
       <select
         id="theme-select"
         value={theme}
-        onChange={(e) => setTheme(e.target.value as any)}
+        onChange={(e) => setTheme(e.target.value as ThemeName)}
         className="switcher-select"
         aria-label="Seleccionar tema visual"
       >

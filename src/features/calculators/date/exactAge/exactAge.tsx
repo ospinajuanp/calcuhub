@@ -30,15 +30,16 @@ export default function ExactAgeCalculator() {
 
     return (
         <div>
-            <h2>{ea.name}</h2>
+            <h2>{ea.exactAgeTitle}</h2>
 
             <form onSubmit={handleCalculate}>
                 <div className='calculator-inputs'>
                     <div className='calculator-input-group'>
-                        <label className='calculator-label'>
+                        <label className='calculator-label' htmlFor="ea-birth-date">
                             {ea.exactAgeBirthDateLabel}
                         </label>
                         <input
+                            id="ea-birth-date"
                             type="date"
                             value={birthDate}
                             onChange={(e) => setBirthDate(e.target.value)}

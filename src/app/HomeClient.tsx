@@ -55,9 +55,9 @@ export default function HomeClient() {
 
             <section className="section">
                 <header className="section-header">
-                    <h1 className="section-header-title">
+                    <h2 className="section-header-title">
                         {tCommon.categoriesTitle}
-                    </h1>
+                    </h2>
                     <p className="section-header-subtitle">
                         {tCommon.categoriesDescription}
                     </p>
