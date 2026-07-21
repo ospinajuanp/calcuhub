@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
 
-export default function robots(): MetadataRoute.Robots {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app';
 
+export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
+            disallow: ['/private/', '/api/'],
         },
-        sitemap: `${baseUrl}/sitemap.xml`,
+        sitemap: `${BASE_URL}/sitemap.xml`,
     };
 }

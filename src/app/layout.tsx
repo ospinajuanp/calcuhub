@@ -14,15 +14,24 @@ function MetadataWrapper({ children }: { children: React.ReactNode }) {
   return <div lang={locale}>{children}</div>;
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'),
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Calculadoras Online - CalcuHub',
+    default: 'CalcuHub - Calculadoras Online Gratuitas',
     template: '%s | CalcuHub',
   },
-  description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más. Calcula IMC, TMB, préstamos y conversiones fácilmente.',
-  keywords: ['calculadora', 'online', 'gratis', 'salud', 'finanzas', 'matemáticas', 'imc', 'tmb', 'prestamos'],
-  authors: [{ name: 'CalcuHub Team' }],
+  description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más. Calcula IMC, TMB, préstamos, intereses, fechas y conversiones fácilmente.',
+  keywords: [
+    'calculadora', 'calculadora online', 'calculadora gratis', 'calculadora salud',
+    'calculadora finanzas', 'calculadora matemáticas', 'IMC', 'TMB', 'TDEE',
+    'calculadora prestamos', 'calculadora intereses', 'calculadora impuestos',
+    'calculadora fechas', 'calculadora conversiones', 'calculadora porcentaje',
+    'calcular IMC', 'calcular TMB', 'calcular TDEE', 'herramientas online',
+    'calculadora gratuita español', 'free calculator'
+  ],
+  authors: [{ name: 'CalcuHub Team', url: BASE_URL }],
   creator: 'CalcuHub',
   publisher: 'CalcuHub',
   robots: {
@@ -39,13 +48,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app',
+    url: BASE_URL,
     siteName: 'CalcuHub',
-    title: 'Calculadoras Online - CalcuHub',
+    title: 'CalcuHub - Calculadoras Online Gratuitas',
     description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más.',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/og-image.png`,
+        url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'CalcuHub - Calculadoras Online',
@@ -53,18 +62,18 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app',
+    canonical: BASE_URL,
     languages: {
-      'es': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}`,
-      'en': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/en`,
-      'pt': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/pt`,
+      'es': BASE_URL,
+      'en': `${BASE_URL}/en`,
+      'pt': `${BASE_URL}/pt`,
     },
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Calculadoras Online - CalcuHub',
+    title: 'CalcuHub - Calculadoras Online Gratuitas',
     description: 'Colección de calculadoras online gratuitas para salud, finanzas, matemáticas y más.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app'}/og-image.png`],
+    images: [`${BASE_URL}/og-image.png`],
     creator: '@calcuhub',
   },
   icons: {

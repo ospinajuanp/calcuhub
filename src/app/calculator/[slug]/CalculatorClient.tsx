@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useTranslation } from '@/core/i18n/useTranslation';
 import type { CalculatorConfig } from '@/core/config/calculator';
 import * as registry from '@/features/calculators/calculatorRegistry'
-
+import CalculatorJsonLd from '@/components/seo/CalculatorJsonLd';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import { Trash } from 'lucide-react'
 
 interface CalculatorClientProps {
@@ -12,35 +13,40 @@ interface CalculatorClientProps {
 
 export function CalculatorClient({ calculator }: CalculatorClientProps) {
   const [version, setVersion] = useState<number>(0)
-  const { tCalculators } = useTranslation();
+  const { tCalculators, tCategories } = useTranslation();
 
   const calcTexts = tCalculators[calculator.id];
+  const categoryTexts = tCategories[calculator.categoryId];
 
-  // JSON-LD → Mejor rankeo en Google + AIO understanding
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    applicationCategory: 'CalculatorApplication',
-    name: calcTexts.name,
-    description: calcTexts.shortDescription,
-  };
+  const breadcrumbItems = [
+    { name: 'Inicio', url: '/' },
+    { name: categoryTexts.name.replace('.', ''), url: `/category/${calculator.categoryId}` },
+    { name: calcTexts.name.replace('.', ''), url: `/calculator/${calculator.slug}` },
+  ];
 
   const SpecificCalculator = registry.calculatorRegistry[calculator.id];
 
   const handleRecrear = () => {
-    setVersion((v) => v + 1); // cambia la key => React lo desmonta y lo crea de nuevo
+    setVersion((v) => v + 1);
   };
 
 
   return (
     <div className="calculator-page">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <CalculatorJsonLd
+        name={calcTexts.name.replace('.', '')}
+        description={calcTexts.shortDescription}
+        url={`/calculator/${calculator.slug}`}
+        category={categoryTexts.name.replace('.', '')}
+        calculatorExplanation={calcTexts.calculatorExplanation}
+      />
+
       <section className="section section-header">
-        <h1>{calcTexts.name}</h1>
+        <h1>{calcTexts.name.replace('.', '')}</h1>
         <p>{calcTexts.shortDescription}</p>
-        
       </section>
 
-      {/* Aquí irá tu formulario real */}
       <section className="section">
         <div className='card card-calculator '>
           <button className='button btn-reload'
@@ -54,7 +60,7 @@ export function CalculatorClient({ calculator }: CalculatorClientProps) {
               This calculator is not yet implemented. Please check back later.
             </p>
           )}
-          
+
         </div>
 
         <div className="card calculator-result-card maxWidth">
@@ -64,11 +70,6 @@ export function CalculatorClient({ calculator }: CalculatorClientProps) {
         </div>
 
       </section>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
     </div>
   );
 }

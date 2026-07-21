@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { categoriesConfig, getCategoryBySlug } from '@/core/config/categories';
-import { calculatorsConfig, type CalculatorConfig } from '@/core/config/calculator';
+import { calculatorsConfig } from '@/core/config/calculator';
 import { getDictionary } from '@/core/i18n/dictionaries';
 import { DEFAULT_LOCALE } from '@/core/i18n/locales';
 import { CategoryClient } from './CategoryClient';

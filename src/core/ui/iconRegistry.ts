@@ -26,6 +26,18 @@ import {
   Ruler,
   Gauge,
   GraduationCap,
+  TrendingUp,
+  Receipt,
+  Activity,
+  Heart,
+  Thermometer,
+  Dog,
+  Square,
+  BabyIcon,
+  Scale,
+  Clock,
+  BarChart3,
+  Landmark,
 } from 'lucide-react';
 
 
@@ -60,6 +72,19 @@ export type AppIconId =
   | 'percentage'
   | 'speed'
   | 'grades'
+  // Nuevas calculadoras
+  | 'roi'
+  | 'profitMargin'
+  | 'bloodPressure'
+  | 'heartRate'
+  | 'temperature'
+  | 'dogAge'
+  | 'area'
+  | 'dueDate'
+  | 'bodyFat'
+  | 'time'
+  | 'amortization'
+  | 'investment'
 
   // redes sociales
   | 'socialLinkedin'
@@ -104,6 +129,24 @@ export const iconRegistry: Record<AppIconId, LucideIcon> = {
   percentage: Percent,
   speed: Gauge,
   grades: GraduationCap,
+
+  // Nuevas calculadoras - Finance
+  roi: TrendingUp,
+  profitMargin: Receipt,
+  amortization: BarChart3,
+  investment: Landmark,
+
+  // Nuevas calculadoras - Health
+  bloodPressure: Activity,
+  heartRate: Heart,
+  dueDate: BabyIcon,
+  bodyFat: Scale,
+
+  // Nuevas calculadoras - Utilities
+  temperature: Thermometer,
+  dogAge: Dog,
+  area: Square,
+  time: Clock,
 
   // Redes
   socialLinkedin: Linkedin,

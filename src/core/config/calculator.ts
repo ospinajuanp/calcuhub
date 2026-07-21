@@ -23,7 +23,19 @@ export type CalculatorId =
   | 'units'
   | 'percentage'
   | 'speed'
-  | 'grades';
+  | 'grades'
+  | 'roi'
+  | 'profitMargin'
+  | 'bloodPressure'
+  | 'heartRate'
+  | 'temperature'
+  | 'dogAge'
+  | 'area'
+  | 'dueDate'
+  | 'bodyFat'
+  | 'time'
+  | 'amortization'
+  | 'investment';
 
 
 
@@ -203,6 +215,102 @@ export const calculatorsConfig: CalculatorConfig[] = [
     categoryId: 'utilities',
     iconId: 'grades',
     i18nKey: 'calculators.grades',
+    featured: false,
+  },
+  {
+    id: 'roi',
+    slug: 'roi',
+    categoryId: 'finance',
+    iconId: 'roi',
+    i18nKey: 'calculators.roi',
+    featured: true,
+  },
+  {
+    id: 'profitMargin',
+    slug: 'profitMargin',
+    categoryId: 'finance',
+    iconId: 'profitMargin',
+    i18nKey: 'calculators.profitMargin',
+    featured: false,
+  },
+  {
+    id: 'bloodPressure',
+    slug: 'bloodPressure',
+    categoryId: 'health',
+    iconId: 'bloodPressure',
+    i18nKey: 'calculators.bloodPressure',
+    featured: true,
+  },
+  {
+    id: 'heartRate',
+    slug: 'heartRate',
+    categoryId: 'health',
+    iconId: 'heartRate',
+    i18nKey: 'calculators.heartRate',
+    featured: false,
+  },
+  {
+    id: 'temperature',
+    slug: 'temperature',
+    categoryId: 'utilities',
+    iconId: 'temperature',
+    i18nKey: 'calculators.temperature',
+    featured: false,
+  },
+  {
+    id: 'dogAge',
+    slug: 'dogAge',
+    categoryId: 'utilities',
+    iconId: 'dogAge',
+    i18nKey: 'calculators.dogAge',
+    featured: false,
+  },
+  {
+    id: 'area',
+    slug: 'area',
+    categoryId: 'utilities',
+    iconId: 'area',
+    i18nKey: 'calculators.area',
+    featured: false,
+  },
+  {
+    id: 'dueDate',
+    slug: 'dueDate',
+    categoryId: 'health',
+    iconId: 'dueDate',
+    i18nKey: 'calculators.dueDate',
+    featured: false,
+  },
+  {
+    id: 'bodyFat',
+    slug: 'bodyFat',
+    categoryId: 'health',
+    iconId: 'bodyFat',
+    i18nKey: 'calculators.bodyFat',
+    featured: false,
+  },
+  {
+    id: 'time',
+    slug: 'time',
+    categoryId: 'utilities',
+    iconId: 'time',
+    i18nKey: 'calculators.time',
+    featured: false,
+  },
+  {
+    id: 'amortization',
+    slug: 'amortization',
+    categoryId: 'finance',
+    iconId: 'amortization',
+    i18nKey: 'calculators.amortization',
+    featured: false,
+  },
+  {
+    id: 'investment',
+    slug: 'investment',
+    categoryId: 'finance',
+    iconId: 'investment',
+    i18nKey: 'calculators.investment',
     featured: false,
   },
 ];

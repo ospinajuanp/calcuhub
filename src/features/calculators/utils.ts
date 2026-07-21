@@ -10,3 +10,7 @@ export function percentage (number:number){
 export function roundTwo (number:number){
     return Math.round(number * 100) / 100;
 }
+
+export function formatNumber(number:number){
+    return new Intl.NumberFormat('es-ES', { maximumFractionDigits: 2 }).format(number);
+}

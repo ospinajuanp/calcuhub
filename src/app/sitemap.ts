@@ -2,31 +2,35 @@ import { MetadataRoute } from 'next';
 import { categoriesConfig } from '@/core/config/categories';
 import { calculatorsConfig } from '@/core/config/calculator';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://calcuhub-lovat.vercel.app';
 
+export default function sitemap(): MetadataRoute.Sitemap {
     const routes = [
-        '',
-    ].map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'daily' as const,
-        priority: 1,
-    }));
+        { route: '', priority: 1.0 as const, changeFrequency: 'daily' as const },
+    ];
 
     const categories = categoriesConfig.map((category) => ({
-        url: `${baseUrl}/category/${category.slug}`,
+        url: `${BASE_URL}/category/${category.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
-        priority: 0.8,
+        priority: 0.9,
     }));
 
     const calculators = calculatorsConfig.map((calculator) => ({
-        url: `${baseUrl}/calculator/${calculator.slug}`,
+        url: `${BASE_URL}/calculator/${calculator.slug}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
     }));
 
-    return [...routes, ...categories, ...calculators];
+    return [
+        ...routes.map(({ route, priority, changeFrequency }) => ({
+            url: `${BASE_URL}${route}`,
+            lastModified: new Date(),
+            changeFrequency,
+            priority,
+        })),
+        ...categories,
+        ...calculators,
+    ];
 }

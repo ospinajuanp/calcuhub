@@ -19,6 +19,18 @@ import UnitsCalculator from './utilities/units/UnitsCalculator';
 import PercentageCalc from './utilities/percentage/PercentageCalculator';
 import SpeedCalculator from './utilities/speed/SpeedCalculator';
 import GradesCalculator from './utilities/grades/GradesCalculator';
+import RoiCalculator from './finance/roi/RoiCalculator';
+import ProfitMarginCalculator from './finance/profitMargin/ProfitMarginCalculator';
+import BloodPressureCalculator from './health/bloodPressure/BloodPressureCalculator';
+import HeartRateCalculator from './health/heartRate/HeartRateCalculator';
+import TemperatureCalculator from './utilities/temperature/TemperatureCalculator';
+import DogAgeCalculator from './utilities/dogAge/DogAgeCalculator';
+import AreaCalculator from './utilities/area/AreaCalculator';
+import DueDateCalculator from './health/dueDate/DueDateCalculator';
+import BodyFatCalculator from './health/bodyFat/BodyFatCalculator';
+import TimeCalculator from './utilities/time/TimeCalculator';
+import AmortizationCalculator from './finance/amortization/AmortizationCalculator';
+import InvestmentCalculator from './finance/investment/InvestmentCalculator';
 
 
 export const calculatorRegistry = {
@@ -43,5 +55,17 @@ export const calculatorRegistry = {
     percentage: PercentageCalc,
     speed: SpeedCalculator,
     grades: GradesCalculator,
+    roi: RoiCalculator,
+    profitMargin: ProfitMarginCalculator,
+    bloodPressure: BloodPressureCalculator,
+    heartRate: HeartRateCalculator,
+    temperature: TemperatureCalculator,
+    dogAge: DogAgeCalculator,
+    area: AreaCalculator,
+    dueDate: DueDateCalculator,
+    bodyFat: BodyFatCalculator,
+    time: TimeCalculator,
+    amortization: AmortizationCalculator,
+    investment: InvestmentCalculator,
 };
 
